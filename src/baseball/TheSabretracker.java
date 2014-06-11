@@ -11,8 +11,8 @@ public class TheSabretracker extends SeasonSelection
 	 * @author yeotaJMU
 	 */
 	
-	OneSeason currentSeason; //the current season used by the GUI, can retrieve info
-	ArrayList<OneGame> gamesInTheSeason = new ArrayList<OneGame>();
+	private OneSeason currentSeason; //the current season used by the GUI, can retrieve info
+	private ArrayList<OneGame> gamesInTheSeason = new ArrayList<OneGame>();
 	
 	public TheSabretracker ()
 	{
