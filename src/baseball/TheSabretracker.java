@@ -59,7 +59,7 @@ public class TheSabretracker extends SeasonSelection
 	/*
 	 * Method will fill the JComboBox with the season choices
 	 */
-	public ArrayList<OneSeason> fillComboBox ()
+	public ArrayList<OneSeason> fillSeasonToLoadComboBox ()
 	{
 		SeasonSelection s = new SeasonSelection();
 		ArrayList<OneSeason> comboBoxChoices = new ArrayList<OneSeason>();
@@ -120,6 +120,44 @@ public class TheSabretracker extends SeasonSelection
 		finalStats = calculateStats(seasonTotals);
 		System.out.println("FINAL STATS:\n" + finalStats.toString());
 		return finalStats;
+	}
+	
+	/*
+	 * Method to fill the combo box for edit game in GUI
+	 */
+	public ArrayList<String> fillGameToEditComboBox ()
+	{
+		ArrayList<String> gameNumAndDate = new ArrayList<String>();
+		gamesInTheSeason.clear(); //clear the array to refill and update
+		String fileToRead = currentSeason.getGameSaveFile();
+		Scanner readFile = TextFileIO.createTextRead(fileToRead);
+		while (readFile.hasNextLine()) //read all the games from file
+			{
+				OneGame og = new OneGame();
+				String comboBoxDisplay; //create new string which we will add to gameNumAndDate
+				og.readGame(readFile);
+				gamesInTheSeason.add(og);
+				comboBoxDisplay = "Game " + og.getGameNumber() + ", " + og.getGameDate(); 
+				gameNumAndDate.add(comboBoxDisplay);
+			}
+		return gameNumAndDate;
+	}
+	/*
+	 * Method to edit game stats
+	 */
+	public OneGame editStatsOfGame (int gameNum)
+	{
+		OneGame gameToEdit = new OneGame();
+		for (OneGame og: gamesInTheSeason)
+		{
+			if (gameNum == og.getGameNumber())
+			{
+				gameToEdit = og;
+				break;
+			}
+		}
+	
+		return gameToEdit;
 	}
 	
 	/*

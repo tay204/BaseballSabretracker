@@ -44,21 +44,29 @@ public class SabretrackerGUI extends JPanel
 	//initialize JPanels
 	JBackgroundPanel backgroundImage = new JBackgroundPanel();
 	
-	JPanel sabretrackerTitlePanel = new JPanel(); //title page
+	//title page
+	JPanel sabretrackerTitlePanel = new JPanel(); 
 	JPanel titleQuestionPanel = new JPanel();
 	JPanel seasonChoicePanel = new JPanel();
-	JPanel teamNamePanel = new JPanel(); //new season page
+	//new season page
+	JPanel teamNamePanel = new JPanel(); 
 	JPanel seasonSelectionPanel =  new JPanel();
 	JPanel yearPanel = new JPanel();
 	JPanel newSeasonSubmitButtonPanel = new JPanel();
 	JPanel newSeasonAddGamePanel = new JPanel();
-	JPanel loadSeasonPanel = new JPanel(); //load season page
+	//load season page
+	JPanel loadSeasonPanel = new JPanel(); 
 	JPanel loadSeasonComboBoxPanel = new JPanel();
-	JPanel addEditShowStatsPanel = new JPanel(); //add, edit, show stats page
+	//add, edit, show stats page
+	JPanel addEditShowStatsPanel = new JPanel(); 
 	JPanel activeSeasonTitlePanel = new JPanel();
 	JPanel addEditButtonPanel = new JPanel();
 	JPanel showStatsPanel = new JPanel();
-	JPanel addGameStatsPanel = new JPanel(); //games stats page
+	//edit stats page
+	JPanel selectGameToEditPanel = new JPanel();
+	JPanel selectGameToEditComboPanel = new JPanel(); 
+	//games stats page
+	JPanel addGameStatsPanel = new JPanel(); 
 	JPanel gameDatePanel = new JPanel();
 	JPanel plateAppearancesPanel = new JPanel();
 	JPanel walksPanel = new JPanel();
@@ -78,19 +86,28 @@ public class SabretrackerGUI extends JPanel
 	JPanel RBIsPanel = new JPanel();
 	JPanel runsScoredPanel = new JPanel();
 	JPanel stolenBasesPanel = new JPanel();
-	JPanel homeButtonPanel = new JPanel(); //home button always to be visible
+	//home button always to be visible
+	JPanel homeButtonPanel = new JPanel(); 
 
-	JLabel titleLabel = new JLabel(); //title page
+	//initialize JLabel
+	//title page
+	JLabel titleLabel = new JLabel();
 	JLabel titleQuestionLabel = new JLabel();
 	JLabel newSeasonLabel = new JLabel();
 	JLabel loadSeasonLabel = new JLabel();
-	JLabel teamNameLabel = new JLabel(); //new season page
+	//new season page
+	JLabel teamNameLabel = new JLabel(); 
 	JLabel seasonSelectionLabel = new JLabel();
 	JLabel yearLabel = new JLabel();
 	JLabel newSeasonSubmitLabel = new JLabel();
-	JLabel loadSeasonChoiceLabel = new JLabel(); //load season page
-	JLabel activeSeasonTitleLabel = new JLabel(); //add edit stats page
-	JLabel gameDateLabel = new JLabel(); //add stats page
+	//load season page
+	JLabel loadSeasonChoiceLabel = new JLabel(); 
+	//add edit stats page
+	JLabel activeSeasonTitleLabel = new JLabel(); 
+	//edit stats page
+	JLabel selectGameToEditComboLabel = new JLabel();
+	//add stats page
+	JLabel gameDateLabel = new JLabel();
 	JLabel plateAppearancesLabel = new JLabel();
 	JLabel walksLabel = new JLabel();
 	JLabel HBPsLabel = new JLabel();
@@ -110,6 +127,7 @@ public class SabretrackerGUI extends JPanel
 	JLabel runsScoredLabel = new JLabel();
 	JLabel stolenBasesLabel = new JLabel();
 
+	//initialize JButton
 	JButton newSeasonButton = new JButton();
 	JButton loadSeasonButton = new JButton();
 	JButton newSeasonSubmitButton = new JButton();
@@ -119,11 +137,15 @@ public class SabretrackerGUI extends JPanel
 	JButton addGameButton = new JButton();
 	JButton editGameButton = new JButton();
 	JButton showStatsButton = new JButton();
+	JButton gameToEditSubmitButton = new JButton();
+	
 	JButton homeButton = new JButton();
 
+	//initialize JTextField
 	JTextField teamNameEntry = new JTextField(25);
 	JTextField yearEntry = new JTextField(10);
-	JTextField dateEntry = new JTextField(15); //add stats page
+	//add stats page
+	JTextField dateEntry = new JTextField(15); 
 	JTextField plateAppearancesEntry = new JTextField(5);
 	JTextField walksEntry = new JTextField(5);
 	JTextField HBPsEntry = new JTextField(5);
@@ -146,8 +168,9 @@ public class SabretrackerGUI extends JPanel
 	
 	//set up combo box for seasons
 	String seasons[] = {"Spring", "Summer", "Fall", "Winter"};
-	JComboBox fourSeasons = new JComboBox(seasons);
+	JComboBox<String> fourSeasons = new JComboBox<String>(seasons);
 	JComboBox seasonToLoad; //will fill box later
+	JComboBox gameToEdit; //will fill box later
 	
 
 
@@ -155,11 +178,13 @@ public class SabretrackerGUI extends JPanel
 	{
 		//*** set panel layouts
 		//*** panels could be LEFT, or RIGHT justified.
-		sabretrackerTitlePanel.setLayout(new FlowLayout(FlowLayout.CENTER)); //title page
+		//title page
+		sabretrackerTitlePanel.setLayout(new FlowLayout(FlowLayout.CENTER)); 
 		sabretrackerTitlePanel.setOpaque(false);
 		titleQuestionPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
 		titleQuestionPanel.setOpaque(false);
-		seasonChoicePanel.setLayout(new FlowLayout(FlowLayout.CENTER));//season selection page
+		//season selection page
+		seasonChoicePanel.setLayout(new FlowLayout(FlowLayout.CENTER));
 		seasonChoicePanel.setOpaque(false);
 		teamNamePanel.setLayout(new FlowLayout(FlowLayout.CENTER));
 		teamNamePanel.setOpaque(false);
@@ -171,12 +196,13 @@ public class SabretrackerGUI extends JPanel
 		newSeasonSubmitButtonPanel.setOpaque(false);
 		newSeasonAddGamePanel.setLayout(new FlowLayout(FlowLayout.CENTER));
 		newSeasonAddGamePanel.setOpaque(false);
-		loadSeasonPanel.setLayout(new BoxLayout(loadSeasonPanel, BoxLayout.Y_AXIS)); //load season page
+		//load season page
+		loadSeasonPanel.setLayout(new BoxLayout(loadSeasonPanel, BoxLayout.Y_AXIS)); 
 		loadSeasonPanel.setOpaque(false);
 		loadSeasonComboBoxPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
 		loadSeasonComboBoxPanel.setOpaque(false);
-		addEditShowStatsPanel.setLayout(new BoxLayout(addEditShowStatsPanel, BoxLayout.Y_AXIS)); //add edit stats page
-		addEditShowStatsPanel.setAlignmentX(CENTER_ALIGNMENT);
+		//add edit stats page
+		addEditShowStatsPanel.setLayout(new BoxLayout(addEditShowStatsPanel, BoxLayout.Y_AXIS)); 
 		addEditShowStatsPanel.setOpaque(false);
 		activeSeasonTitlePanel.setLayout(new FlowLayout(FlowLayout.CENTER));
 		activeSeasonTitlePanel.setOpaque(false);
@@ -184,7 +210,14 @@ public class SabretrackerGUI extends JPanel
 		addEditButtonPanel.setOpaque(false);
 		showStatsPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
 		showStatsPanel.setOpaque(false);
-		addGameStatsPanel.setLayout(new BoxLayout(addGameStatsPanel, BoxLayout.Y_AXIS));//add stats page
+		//edit stats page
+		selectGameToEditPanel.setLayout(new BoxLayout(selectGameToEditPanel, BoxLayout.Y_AXIS));
+		selectGameToEditPanel.setAlignmentX(CENTER_ALIGNMENT);
+		selectGameToEditPanel.setOpaque(false);
+		selectGameToEditComboPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		selectGameToEditComboPanel.setOpaque(false);
+		//add stats page
+		addGameStatsPanel.setLayout(new BoxLayout(addGameStatsPanel, BoxLayout.Y_AXIS));
 		addGameStatsPanel.setOpaque(false);
 		gameDatePanel.setLayout(new FlowLayout(FlowLayout.LEFT));
 		gameDatePanel.setOpaque(false);
@@ -224,6 +257,7 @@ public class SabretrackerGUI extends JPanel
 		runsScoredPanel.setOpaque(false);
 		stolenBasesPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
 		stolenBasesPanel.setOpaque(false);
+		//homeButton
 		homeButtonPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
 		homeButtonPanel.setAlignmentY(BOTTOM_ALIGNMENT);
 		homeButtonPanel.setBackground(Color.DARK_GRAY);		
@@ -235,21 +269,29 @@ public class SabretrackerGUI extends JPanel
 		Font smallFont = new Font("Helvetica Bold", Font.BOLD, 15);
 		
 		//set up label appearances
-		titleLabel.setFont(titleFont); //title page
+		//title page
+		titleLabel.setFont(titleFont); 
 		titleLabel.setForeground(Color.WHITE);
 		titleQuestionLabel.setFont(bigFont);
 		titleQuestionLabel.setForeground(Color.WHITE);
-		teamNameLabel.setFont(medFont); //new season page
+		//new season page
+		teamNameLabel.setFont(medFont); 
 		teamNameLabel.setForeground(Color.WHITE);
 		seasonSelectionLabel.setFont(medFont); 
 		seasonSelectionLabel.setForeground(Color.WHITE);
 		yearLabel.setFont(medFont);
 		yearLabel.setForeground(Color.WHITE);
-		loadSeasonChoiceLabel.setFont(bigFont); //load season page
+		//load season page
+		loadSeasonChoiceLabel.setFont(bigFont); 
 		loadSeasonChoiceLabel.setForeground(Color.WHITE);
-		activeSeasonTitleLabel.setFont(bigFont); //add edit stats page
+		//add edit stats page
+		activeSeasonTitleLabel.setFont(bigFont); 
 		activeSeasonTitleLabel.setForeground(Color.WHITE);
-		gameDateLabel.setFont(medFont); //add stats label
+		//edit stats page
+		selectGameToEditComboLabel.setFont(bigFont); 
+		selectGameToEditComboLabel.setForeground(Color.WHITE);
+		//add stats label
+		gameDateLabel.setFont(medFont); 
 		gameDateLabel.setForeground(Color.WHITE);
 		plateAppearancesLabel.setFont(medFont);
 		plateAppearancesLabel.setForeground(Color.WHITE);
@@ -289,13 +331,19 @@ public class SabretrackerGUI extends JPanel
 		stolenBasesLabel.setForeground(Color.WHITE);
 		
 		//set label texts
-		titleLabel.setText("BASEBALL SABRETRACKER"); //title page
+		//title page
+		titleLabel.setText("BASEBALL SABRETRACKER"); 
 		titleQuestionLabel.setText("Select a New Season or Load a Season:");
 		teamNameLabel.setText("Enter the team name:");
-		seasonSelectionLabel.setText("Select the season:"); //new season page
+		//new season page
+		seasonSelectionLabel.setText("Select the season:"); 
 		yearLabel.setText("Enter the year:");
-		loadSeasonChoiceLabel.setText("Select a Season to Load:"); //load season page
-		gameDateLabel.setText("Enter the Game Date:"); //add stats page
+		//load season page
+		loadSeasonChoiceLabel.setText("Select a Season to Load:"); 
+		//edit game panel
+		selectGameToEditComboLabel.setText("Select a Game to Edit:"); 
+		//add stats page
+		gameDateLabel.setText("Enter the Game Date:"); 
 		plateAppearancesLabel.setText("Plate Appearances:");
 		walksLabel.setText("Walks:");
 		HBPsLabel.setText("HBPs:");
@@ -315,22 +363,29 @@ public class SabretrackerGUI extends JPanel
 		runsScoredLabel.setText("Runs:");
 		stolenBasesLabel.setText("Stolen Bases:");
 		
+		//set up textfield texts
+		dateEntry.setText("XX/XX/XXXX");
+		
 		
 		
 		//set up buttons
-		newSeasonButton.setText(" New Season "); //title page
+		//title page
+		newSeasonButton.setText(" New Season "); 
 		newSeasonButton.setPreferredSize(new Dimension(250, 150));
 		newSeasonButton.setFont(medFont);
 		loadSeasonButton.setText(" Load Season ");
 		loadSeasonButton.setPreferredSize(new Dimension(250, 150));
 		loadSeasonButton.setFont(medFont);
-		newSeasonSubmitButton.setText(" Submit "); //new season page
+		//new season page
+		newSeasonSubmitButton.setText(" Submit "); 
 		newSeasonAddGameButton.setText(" Add Game ");
 		newSeasonAddGameButton.setFont(medFont);
 		newSeasonAddGameButton.setPreferredSize(new Dimension(250, 150));
 		newSeasonAddGameButton.setFont(medFont);
-		loadSeasonSubmitButton.setText(" Submit "); //load season page
-		addGameButton.setText(" Add Game "); //add edit show stats page
+		//load season page
+		loadSeasonSubmitButton.setText(" Submit ");
+		//add edit show stats page
+		addGameButton.setText(" Add Game "); 
 		addGameButton.setFont(medFont);
 		addGameButton.setPreferredSize(new Dimension(250,150));
 		editGameButton.setText(" Edit Game ");
@@ -339,8 +394,12 @@ public class SabretrackerGUI extends JPanel
 		showStatsButton.setText(" Show Stats ");
 		showStatsButton.setFont(medFont);
 		showStatsButton.setPreferredSize(new Dimension(250,150));
-		addStatsSubmitButton.setText(" Submit "); //add stats page
-		homeButton.setText(" Home "); //home button
+		//add stats page
+		addStatsSubmitButton.setText(" Submit "); 
+		//edit stats page
+		gameToEditSubmitButton.setText(" Submit "); 
+		//home button
+		homeButton.setText(" Home "); 
 		homeButton.setFont(medFont);
 		homeButton.setBackground(Color.BLACK);
 		homeButton.setForeground(Color.WHITE);
@@ -356,16 +415,19 @@ public class SabretrackerGUI extends JPanel
 		addGameButton.addActionListener(new addGameButton());
 		editGameButton.addActionListener(new editGameButton());
 		showStatsButton.addActionListener(new showStatsButton());
+		gameToEditSubmitButton.addActionListener(new gameToEditSubmitButton());
 		homeButton.addActionListener(new homeButton());
 		
 		//add labels and buttons to panels
-		sabretrackerTitlePanel.add(titleLabel); //title page
+		//title page
+		sabretrackerTitlePanel.add(titleLabel); 
 		titleQuestionPanel.add(titleQuestionLabel);
 		titleQuestionPanel.add(Box.createVerticalStrut(150));	
 		seasonChoicePanel.add(newSeasonButton);
 		seasonChoicePanel.add(Box.createHorizontalStrut(24));//add space between buttons
 		seasonChoicePanel.add(loadSeasonButton);
-		teamNamePanel.add(teamNameLabel); //new season page
+		//new season page
+		teamNamePanel.add(teamNameLabel); 
 		teamNamePanel.add(teamNameEntry);
 		seasonSelectionPanel.add(seasonSelectionLabel);
 		seasonSelectionPanel.add(fourSeasons);
@@ -373,7 +435,8 @@ public class SabretrackerGUI extends JPanel
 		yearPanel.add(yearEntry);
 		newSeasonSubmitButtonPanel.add(newSeasonSubmitButton);
 		newSeasonAddGamePanel.add(newSeasonAddGameButton);
-		activeSeasonTitlePanel.add(activeSeasonTitleLabel); //add edit show stats page
+		//add edit show stats page
+		activeSeasonTitlePanel.add(activeSeasonTitleLabel); 
 		addEditShowStatsPanel.add(activeSeasonTitlePanel); 
 		addEditButtonPanel.add(addGameButton); 
 		addEditButtonPanel.add(editGameButton);
@@ -454,7 +517,6 @@ public class SabretrackerGUI extends JPanel
 	
 		//panels need to be added on top of the background image
 		setLayout(new BorderLayout());
-		//backgroundImage.setLayout(new GridLayout());
 		backgroundImage.add(sabretrackerTitlePanel);
 		backgroundImage.add(titleQuestionPanel);
 		backgroundImage.add(seasonChoicePanel);
@@ -513,7 +575,7 @@ public class SabretrackerGUI extends JPanel
 			titleQuestionPanel.setVisible(false);
 			seasonChoicePanel.setVisible(false);
 			ArrayList<OneSeason> boxChoice = new ArrayList<OneSeason>();
-			boxChoice = ts.fillComboBox();
+			boxChoice = ts.fillSeasonToLoadComboBox();
 			seasonToLoad = new JComboBox(boxChoice.toArray()); //fill options for combo box
 			loadSeasonChoiceLabel.setAlignmentX(CENTER_ALIGNMENT);
 			loadSeasonComboBoxPanel.add(seasonToLoad);
@@ -531,7 +593,7 @@ public class SabretrackerGUI extends JPanel
 		public void actionPerformed(ActionEvent e)
 		{
 			String seasonFromCombo = seasonToLoad.getSelectedItem().toString();
-			//we need to split the comboBox string into seperate components to use for OneSeason
+			//we need to split the comboBox string into separate components to use for OneSeason
 			//will allow us to get the file name where games are stored
 			String[] splitStringForTeamName = seasonFromCombo.split(",");
 			String[] splitStringForSeason = splitStringForTeamName[1].split("\\s");
@@ -583,9 +645,9 @@ public class SabretrackerGUI extends JPanel
 	{
 		public void actionPerformed(ActionEvent e)
 		{
+			addEditShowStatsPanel.setVisible(false);
 			ts.findGameNumber();
 			addGameStatsPanel.setVisible(true);
-			addEditShowStatsPanel.setVisible(false);
 		}
 	}
 	
@@ -594,9 +656,31 @@ public class SabretrackerGUI extends JPanel
 		public void actionPerformed(ActionEvent e)
 		{
 			addEditShowStatsPanel.setVisible(false);
+			ArrayList<String> comboBoxChoice = new ArrayList<String>();
+			comboBoxChoice = ts.fillGameToEditComboBox();
+			gameToEdit = new JComboBox(comboBoxChoice.toArray());
+			selectGameToEditComboLabel.setAlignmentX(CENTER_ALIGNMENT);
+			selectGameToEditComboPanel.add(gameToEdit);
+			selectGameToEditComboPanel.add(gameToEditSubmitButton);
+			selectGameToEditPanel.add(selectGameToEditComboLabel);
+			selectGameToEditPanel.add(selectGameToEditComboPanel);
+			selectGameToEditPanel.setVisible(true);
+			backgroundImage.add(selectGameToEditPanel);
 		}
 	}
 	
+	class gameToEditSubmitButton implements ActionListener
+	{
+		public void actionPerformed(ActionEvent e)
+		{
+			String gameChoice = gameToEdit.getSelectedItem().toString();
+			String[] splitGameChoice = gameChoice.split(",|\\s"); //split the string into pieces
+			int gameNum = Integer.parseInt(splitGameChoice[1]);//extract game number
+			OneGame gameToEditDisplay = new OneGame();
+			gameToEditDisplay = ts.editStatsOfGame(gameNum);
+			//need to finish here
+		}
+	}
 	class showStatsButton implements ActionListener
 	{
 		public void actionPerformed(ActionEvent e)
@@ -652,6 +736,7 @@ public class SabretrackerGUI extends JPanel
 			newSeasonAddGamePanel.setVisible(false);
 			addGameStatsPanel.setVisible(false);
 			addEditShowStatsPanel.setVisible(false);
+			selectGameToEditPanel.setVisible(false);
 			
 			loadSeasonComboBoxPanel.removeAll();
 			loadSeasonPanel.removeAll();
