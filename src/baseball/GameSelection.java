@@ -14,27 +14,8 @@ public class GameSelection
 	 * @author yeotaJMU
 	 */
 	
-	private static ArrayList<OneGame> allGames = new ArrayList<OneGame>();
+	//private static ArrayList<OneGame> allGames = new ArrayList<OneGame>();
 	
-	public void addOrEditGame (OneSeason o)
-	{
-		String choices [] = {"Add Game", "Edit Game"};//used in optionDialog
-		int choice = JOptionPane.showOptionDialog(null, "Add a new game or edit existing game?", 
-						"Add/Edit Game", 
-						JOptionPane.YES_NO_OPTION, 
-						JOptionPane.INFORMATION_MESSAGE, 
-						null, choices, 
-						choices[0]//"Add Game"
-								);
-		if (choice == 0)
-		{
-			//createNewGame(o); //create a new game
-		}
-		else
-			{
-				//selectGameToLoad(); //select existing game to edit
-			}
-	}
 	
 	/*
 	 * method to add a new game to the season

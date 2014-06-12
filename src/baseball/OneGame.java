@@ -12,7 +12,7 @@ public class OneGame extends OneSeason
 	
 	private int gameNumber;
 	private String gameDate;
-	private int plateAppearances, walks, HBPs, totalHits, outFCOrError, singles, doubles, triples, homeRuns, 
+	private int plateAppearances, walks, HBPs, totalHits, battedOutsKsFCOrError, singles, doubles, triples, homeRuns, 
 		strikeoutSwinging, strikeoutLooking, sacFly, sacBunt, lineDrive, flyBall, RBIs, runsScored, stolenBases;
 	
 	//constructors
@@ -25,7 +25,7 @@ public class OneGame extends OneSeason
 		walks = 0;
 		HBPs = 0;
 		totalHits = 0;
-		outFCOrError = 0;
+		battedOutsKsFCOrError = 0;
 		singles = 0;
 		doubles = 0;
 		triples = 0;
@@ -49,15 +49,16 @@ public class OneGame extends OneSeason
 		setGameDate(date);
 	}
 	
-	public OneGame (String date, int PAs, int BBs, int hits, int outs, 
+	public OneGame (String date, int PAs, int BBs, int hbp, int hits, int outs, 
 			int oneB, int twoB, int threeB, int hrs, int swingingK, int lookingK, 
 			int sacF, int sacB, int lineD, int flyB, int RBI, int runs, int sb)
 			{
 				gameDate = date;
 				plateAppearances = PAs;
 				walks = BBs;
+				HBPs = hbp;
 				totalHits = hits;
-				outFCOrError = outs;
+				battedOutsKsFCOrError = outs;
 				singles = oneB;
 				doubles = twoB;
 				triples = threeB;
@@ -85,7 +86,7 @@ public class OneGame extends OneSeason
 		walks = read.nextInt();
 		HBPs = read.nextInt();
 		totalHits = read.nextInt();
-		outFCOrError = read.nextInt();
+		battedOutsKsFCOrError = read.nextInt();
 		singles = read.nextInt();
 		doubles = read.nextInt();
 		triples = read.nextInt();
@@ -113,7 +114,7 @@ public class OneGame extends OneSeason
 		textStream.println(walks);
 		textStream.println(HBPs);
 		textStream.println(totalHits);
-		textStream.println(outFCOrError);
+		textStream.println(battedOutsKsFCOrError);
 		textStream.println(singles);
 		textStream.println(doubles);
 		textStream.println(triples);
@@ -140,7 +141,7 @@ public class OneGame extends OneSeason
 				+ "Walks: " + walks + "\n"
 				+ "HBPs: " + HBPs + "\n"
 				+ "Total Hits: " + totalHits + "\n"
-				+ "Outs/Fielder's Choice/Errors: " + outFCOrError + "\n"
+				+ "Outs/Fielder's Choice/Errors: " + battedOutsKsFCOrError + "\n"
 				+ "Singles: " + singles + "\n"
 				+ "Doubles: " + doubles + "\n"
 				+ "Triples: " + triples + "\n"
@@ -207,11 +208,11 @@ public class OneGame extends OneSeason
 	}
 
 	public int getOutFCOrError() {
-		return outFCOrError;
+		return battedOutsKsFCOrError;
 	}
 
 	public void setOutFCOrError(int outFCOrError) {
-		this.outFCOrError = outFCOrError;
+		this.battedOutsKsFCOrError = outFCOrError;
 	}
 
 	public int getSingles() {

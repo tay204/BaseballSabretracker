@@ -300,7 +300,7 @@ public class SabretrackerGUI extends JPanel
 		walksLabel.setText("Walks:");
 		HBPsLabel.setText("HBPs:");
 		totalHitsLabel.setText("Total Hits:");
-		outFCOrErrorLabel.setText("Outs/Fielder's Choice/Errors:");
+		outFCOrErrorLabel.setText("Outs/Fielder's Choice/Errors/K's:");
 		singlesLabel.setText("Singles:");
 		doublesLabel.setText("Doubles:");
 		triplesLabel.setText("Triples:");
@@ -601,6 +601,7 @@ public class SabretrackerGUI extends JPanel
 	{
 		public void actionPerformed(ActionEvent e)
 		{
+			ts.compileSeasonStats();
 			addEditShowStatsPanel.setVisible(false);
 		}
 	}
@@ -628,7 +629,7 @@ public class SabretrackerGUI extends JPanel
 			int runs = Integer.parseInt(runsScoredEntry.getText());
 			int sb = Integer.parseInt(stolenBasesEntry.getText());
 			
-			ts.enterGameStats(date, plateAps, hbp, hits, outs, oneB, twoB, threeB, 
+			ts.enterGameStats(date, plateAps, walks, hbp, hits, outs, oneB, twoB, threeB, 
 					hr, soS, soL, sacF, sacB, ld, fb, RBI, runs, sb);
 			
 			addGameStatsPanel.setVisible(false);

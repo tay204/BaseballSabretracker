@@ -1,5 +1,7 @@
 package baseball;
 
+import java.text.DecimalFormat;
+
 public class ComputeStats 
 {
 	/**
@@ -12,7 +14,8 @@ public class ComputeStats
 		statHR, statRBI, statSB, statBB, statTotalK, statLookingK, 
 		statSwingingK, statTB, statHBP, statSacB, statSacF;
 	private double statBA, statOBP, statSLG, statOPS, statBABIP, statLDPer, 
-		statFBPer, statBBPer, statKPer, statHRPerFB;
+		statFBPer, statGBPer, statBBPer, statKPer, statHRPerFB;
+	DecimalFormat d = new DecimalFormat(".000"); //will be used to account for 3 digit standard
 	
 	//constructors
 	public ComputeStats ()
@@ -41,6 +44,7 @@ public class ComputeStats
 		statBABIP = 0;
 		statLDPer = 0;
 		statFBPer = 0;
+		statGBPer = 0;
 		statBBPer = 0;
 		statKPer = 0;
 		statHRPerFB = 0;
@@ -82,10 +86,145 @@ public class ComputeStats
 	public double computeBattingAverage (int ABs, int totalHits)
 	{
 		//batting avg is total hits per at bats
-		statBA = totalHits / ABs;
+		statBA = (double) totalHits / (double) ABs;
 		return statBA;
 	}
 	
+	/*
+	 * Method to compute on base percentage
+	 */
+	public double computeOnBasePercentage (int ABs, int BBs, int HBPs, int totalHits, int sacF)
+	{
+		//OBP is hits, walks, and HBPs per ABs, BBs, hits, HBPs, and sac flies
+		statOBP = (double) (BBs + HBPs + totalHits) / (double) (ABs + BBs + HBPs + sacF);
+		return statOBP;
+	}
+	
+	/*
+	 * Method to compute slugging percentage
+	 */
+	public double computeSluggingPercentage (int totalBases, int ABs)
+	{
+		//slugging is total bases over at bats
+		statSLG = (double) totalBases / (double) ABs;
+		return statSLG;
+	}
+	
+	/*
+	 * Method to compute OPS
+	 */
+	public double computeOPS (double obp, double slg)
+	{
+		//OPS is slugging plus on base percentage
+		statOPS = obp + slg;
+		return statOPS;
+	}
+	
+	/*
+	 * Method to compute BABIP
+	 */
+	public double computeBattingAvgOnBallsInPlay (int totalHits, int hr, int totalK, int ABs, int sacF)
+	{
+		//batting avg on balls in play is hits less home runs per at-bats, Ks, hr, and sac fly
+		statBABIP = (double) (totalHits - hr) / (double) (ABs - totalK - hr + sacF);
+		return statBABIP;
+	}
+	
+	/*
+	 * Method to compute line drive percentage
+	 */
+	public double computeLineDrivePercentage (int ld, int outs, int totalHits)
+	{
+		//line drive percentage is the line drives per balls in play - outs and hits
+		statLDPer = (double) ld / (double) (outs + totalHits);
+		return statLDPer;
+	}
+	
+	/*
+	 * Method to compute fly ball percentage
+	 */
+	public double computeFlyBallPercentage (int fb, int outs, int totalHits)
+	{
+		//fly ball percentage is the fly balls per balls in play - outs and hits
+		statFBPer = (double) fb / (double) (outs + totalHits);
+		return statFBPer;
+	}
+	
+	/*
+	 * Method to compute ground ball percentage
+	 */
+	public double computeGroundBallPercentage (double ldPer, double fbPer)
+	{
+		//ground ball percentage is the ground balls per balls in play
+		//gbPer, fbPer, and ldPer add up to 100%
+		statGBPer = (double) 1 - (double) (ldPer + fbPer);
+		return statGBPer;
+	}
+	
+	/*
+	 * Method to compute walk percentage
+	 */
+	public double computeWalkPercentage (int BBs, int PAs)
+	{
+		//walk percentage is BBs per plate appearances
+		statBBPer = (double) BBs / (double) PAs;
+		return statBBPer;
+	}
+	
+	/*
+	 * Method to compute strikeout percentage
+	 */
+	public double computeStrikeoutPercentage (int totalK, int PAs)
+	{
+		//K percentage is Ks per plate appearances
+		statKPer = (double) totalK / (double) PAs;
+		return statKPer;
+	}
+	
+	/*
+	 * Method to compute HRs per fly ball percentage
+	 */
+	public double computeHRPerFlyBallPercentage (int hrs, int flyB)
+	{
+		//HR per fly ball percentage is the home runs per fly bals
+		statHRPerFB = (double) hrs / (double) flyB;
+		return statHRPerFB;
+	}
+	
+	/*
+	 * To string method
+	 */
+	public String toString ()
+	{
+		return ("PAs: " + statPAs + "\n"
+				+ "ABs: " + statABs + "\n"
+				+ "Runs: " + statRuns + "\n"
+				+ "Hits: " + statHits + "\n"
+				+ "2B: " + stat2B + "\n"
+				+ "3B: " + stat3B + "\n"
+				+ "HR: " + statHR + "\n"
+				+ "RBIs: " + statRBI + "\n"
+				+ "SBs: " + statSB + "\n"
+				+ "BBs: " + statBB + "\n"
+				+ "SOs: " + statTotalK + "\n"
+				+ "Looking K: " + statLookingK + "\n"
+				+ "Swinging K: " + statSwingingK + "\n"
+				+ "AVG: " + d.format(statBA) + "\n"
+				+ "OBP: " + d.format(statOBP) + "\n"
+				+ "SLG: " + d.format(statSLG) + "\n"
+				+ "OPS: " + d.format(statOPS) + "\n"
+				+ "TB: " + statTB + "\n"
+				+ "HBP: " + statHBP + "\n"
+				+ "Sac Bunt: " + statSacB + "\n"
+				+ "Sac Fly: " + statSacF + "\n"
+				+ "BABIP: " + d.format(statBABIP) + "\n"
+				+ "LD%: " + d.format(statLDPer) + "\n"
+				+ "FB%: " + d.format(statFBPer) + "\n"
+				+ "GB%: " + d.format(statGBPer) + "\n"
+				+ "BB%: " + d.format(statBBPer) + "\n"
+				+ "K%: " + d.format(statKPer) + "\n"
+				+ "HRperFB% " + d.format(statHRPerFB) + "\n");
+	}
 	
 	//getters and setters
 	public int getStatPAs() {
@@ -278,6 +417,14 @@ public class ComputeStats
 
 	public void setStatFBPer(double statFBPer) {
 		this.statFBPer = statFBPer;
+	}
+
+	public double getStatGBPer() {
+		return statGBPer;
+	}
+
+	public void setStatGBPer(double statGBPer) {
+		this.statGBPer = statGBPer;
 	}
 
 	public double getStatBBPer() {
