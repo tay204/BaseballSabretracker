@@ -2,6 +2,7 @@ package baseball;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
@@ -65,6 +66,29 @@ public class SabretrackerGUI extends JPanel
 	//edit stats page
 	JPanel selectGameToEditPanel = new JPanel();
 	JPanel selectGameToEditComboPanel = new JPanel(); 
+	JPanel editGameInstructionsPanel = new JPanel();
+	JPanel gameToEditDisplayPanel = new JPanel();
+	JPanel editGameSaveChangesPanel = new JPanel();
+	JPanel editGameStatsPanel = new JPanel(); 
+	JPanel editGameDatePanel = new JPanel();
+	JPanel editPlateAppearancesPanel = new JPanel();
+	JPanel editWalksPanel = new JPanel();
+	JPanel editHBPsPanel = new JPanel();
+	JPanel editTotalHitsPanel = new JPanel();
+	JPanel editOutFCOrErrorPanel = new JPanel();
+	JPanel editSinglesPanel = new JPanel();
+	JPanel editDoublesPanel = new JPanel();
+	JPanel editTriplesPanel = new JPanel();
+	JPanel editHomeRunsPanel = new JPanel();
+	JPanel editStrikeoutSwingingPanel = new JPanel();
+	JPanel editStrikeoutLookingPanel = new JPanel();
+	JPanel editSacFlyPanel = new JPanel();
+	JPanel editSacBuntPanel = new JPanel();
+	JPanel editLineDrivePanel = new JPanel();
+	JPanel editFlyBallPanel = new JPanel();
+	JPanel editRBIsPanel = new JPanel();
+	JPanel editRunsScoredPanel = new JPanel();
+	JPanel editStolenBasesPanel = new JPanel();
 	//games stats page
 	JPanel addGameStatsPanel = new JPanel(); 
 	JPanel gameDatePanel = new JPanel();
@@ -104,6 +128,7 @@ public class SabretrackerGUI extends JPanel
 	JLabel loadSeasonChoiceLabel = new JLabel(); 
 	//add edit stats page
 	JLabel activeSeasonTitleLabel = new JLabel(); 
+	JLabel editGameInstructionLabel = new JLabel();
 	//edit stats page
 	JLabel selectGameToEditComboLabel = new JLabel();
 	//add stats page
@@ -138,6 +163,7 @@ public class SabretrackerGUI extends JPanel
 	JButton editGameButton = new JButton();
 	JButton showStatsButton = new JButton();
 	JButton gameToEditSubmitButton = new JButton();
+	JButton editGameSaveChangesButton = new JButton();
 	
 	JButton homeButton = new JButton();
 
@@ -216,6 +242,52 @@ public class SabretrackerGUI extends JPanel
 		selectGameToEditPanel.setOpaque(false);
 		selectGameToEditComboPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
 		selectGameToEditComboPanel.setOpaque(false);
+		editGameInstructionsPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		editGameInstructionsPanel.setOpaque(false);
+		gameToEditDisplayPanel.setLayout(new GridLayout(0,2));
+		gameToEditDisplayPanel.setOpaque(false);
+		addGameStatsPanel.setLayout(new BoxLayout(addGameStatsPanel, BoxLayout.Y_AXIS));
+		addGameStatsPanel.setOpaque(false);
+		editGameDatePanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+		editGameDatePanel.setOpaque(false);
+		editPlateAppearancesPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+		editPlateAppearancesPanel.setOpaque(false);
+		editWalksPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+		editWalksPanel.setOpaque(false);
+		editHBPsPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+		editHBPsPanel.setOpaque(false);
+		editTotalHitsPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+		editTotalHitsPanel.setOpaque(false);
+		editOutFCOrErrorPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+		editOutFCOrErrorPanel.setOpaque(false);
+		editSinglesPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+		editSinglesPanel.setOpaque(false);
+		editDoublesPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+		editDoublesPanel.setOpaque(false);
+		editTriplesPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+		editTriplesPanel.setOpaque(false);
+		editHomeRunsPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+		editHomeRunsPanel.setOpaque(false);
+		editStrikeoutSwingingPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+		editStrikeoutSwingingPanel.setOpaque(false);
+		editStrikeoutLookingPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+		editStrikeoutLookingPanel.setOpaque(false);
+		editSacFlyPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+		editSacFlyPanel.setOpaque(false);
+		editSacBuntPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+		editSacBuntPanel.setOpaque(false);
+		editLineDrivePanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+		editLineDrivePanel.setOpaque(false);
+		editFlyBallPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+		editFlyBallPanel.setOpaque(false);
+		editRBIsPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+		editRBIsPanel.setOpaque(false);
+		editRunsScoredPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+		editRunsScoredPanel.setOpaque(false);
+		editStolenBasesPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+		editStolenBasesPanel.setOpaque(false);
+		editGameSaveChangesPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+		editGameSaveChangesPanel.setOpaque(false);
 		//add stats page
 		addGameStatsPanel.setLayout(new BoxLayout(addGameStatsPanel, BoxLayout.Y_AXIS));
 		addGameStatsPanel.setOpaque(false);
@@ -290,6 +362,8 @@ public class SabretrackerGUI extends JPanel
 		//edit stats page
 		selectGameToEditComboLabel.setFont(bigFont); 
 		selectGameToEditComboLabel.setForeground(Color.WHITE);
+		editGameInstructionLabel.setFont(bigFont);
+		editGameInstructionLabel.setForeground(Color.WHITE);
 		//add stats label
 		gameDateLabel.setFont(medFont); 
 		gameDateLabel.setForeground(Color.WHITE);
@@ -398,6 +472,7 @@ public class SabretrackerGUI extends JPanel
 		addStatsSubmitButton.setText(" Submit "); 
 		//edit stats page
 		gameToEditSubmitButton.setText(" Submit "); 
+		editGameSaveChangesButton.setText(" Save Changes ");
 		//home button
 		homeButton.setText(" Home "); 
 		homeButton.setFont(medFont);
@@ -416,6 +491,7 @@ public class SabretrackerGUI extends JPanel
 		editGameButton.addActionListener(new editGameButton());
 		showStatsButton.addActionListener(new showStatsButton());
 		gameToEditSubmitButton.addActionListener(new gameToEditSubmitButton());
+		editGameSaveChangesButton.addActionListener(new editGameSaveChangesButton());
 		homeButton.addActionListener(new homeButton());
 		
 		//add labels and buttons to panels
@@ -444,7 +520,7 @@ public class SabretrackerGUI extends JPanel
 		showStatsPanel.add(Box.createVerticalStrut(150));
 		addEditShowStatsPanel.add(addEditButtonPanel);
 		addEditShowStatsPanel.add(showStatsPanel);
-		
+		//stats page		
 		gameDatePanel.add(gameDateLabel);//first, add labels to panels for add stats page
 		gameDatePanel.add(dateEntry);
 		plateAppearancesPanel.add(plateAppearancesLabel);
@@ -503,6 +579,67 @@ public class SabretrackerGUI extends JPanel
 		addGameStatsPanel.add(runsScoredPanel);
 		addGameStatsPanel.add(stolenBasesPanel);
 		addGameStatsPanel.add(addStatsSubmitButton);
+		//edit stats page
+		editGameDatePanel.add(gameDateLabel);//first, add labels to panels for add stats page
+		editGameDatePanel.add(dateEntry);
+		editPlateAppearancesPanel.add(plateAppearancesLabel);
+		editPlateAppearancesPanel.add(plateAppearancesEntry);
+		editWalksPanel.add(walksLabel);
+		editWalksPanel.add(walksEntry);
+		editHBPsPanel.add(HBPsLabel);
+		editHBPsPanel.add(HBPsEntry);
+		editTotalHitsPanel.add(totalHitsLabel);
+		editTotalHitsPanel.add(totalHitsEntry);
+		editOutFCOrErrorPanel.add(outFCOrErrorLabel);
+		editOutFCOrErrorPanel.add(outFCOrErrorEntry);
+		editSinglesPanel.add(singlesLabel);
+		editSinglesPanel.add(singlesEntry);
+		editDoublesPanel.add(doublesLabel);
+		editDoublesPanel.add(doublesEntry);
+		editTriplesPanel.add(triplesLabel);
+		editTriplesPanel.add(triplesEntry);
+		editHomeRunsPanel.add(homeRunsLabel);
+		editHomeRunsPanel.add(homeRunsEntry);
+		editStrikeoutSwingingPanel.add(strikeoutSwingingLabel);
+		editStrikeoutSwingingPanel.add(strikeoutSwingingEntry);
+		editStrikeoutLookingPanel.add(strikeoutLookingLabel);
+		editStrikeoutLookingPanel.add(strikeoutLookingEntry);
+		editSacFlyPanel.add(sacFlyLabel);
+		editSacFlyPanel.add(sacFlyEntry);
+		editSacBuntPanel.add(sacBuntLabel);
+		editSacBuntPanel.add(sacBuntEntry);
+		editLineDrivePanel.add(lineDriveLabel);
+		editLineDrivePanel.add(lineDriveEntry);
+		editFlyBallPanel.add(flyBallLabel);
+		editFlyBallPanel.add(flyBallEntry);
+		editRBIsPanel.add(RBIsLabel);
+		editRBIsPanel.add(RBIsEntry);
+		editRunsScoredPanel.add(runsScoredLabel);
+		editRunsScoredPanel.add(runsScoredEntry);
+		editStolenBasesPanel.add(stolenBasesLabel);
+		editStolenBasesPanel.add(stolenBasesEntry);
+		editGameInstructionsPanel.add(editGameInstructionLabel);
+		gameToEditDisplayPanel.add(editGameDatePanel);
+		gameToEditDisplayPanel.add(editPlateAppearancesPanel);
+		gameToEditDisplayPanel.add(editWalksPanel);
+		gameToEditDisplayPanel.add(editHBPsPanel);
+		gameToEditDisplayPanel.add(editTotalHitsPanel);
+		gameToEditDisplayPanel.add(editOutFCOrErrorPanel);
+		gameToEditDisplayPanel.add(editSinglesPanel);
+		gameToEditDisplayPanel.add(editDoublesPanel);
+		gameToEditDisplayPanel.add(editTriplesPanel);
+		gameToEditDisplayPanel.add(editHomeRunsPanel);
+		gameToEditDisplayPanel.add(editStrikeoutSwingingPanel);
+		gameToEditDisplayPanel.add(editStrikeoutLookingPanel);
+		gameToEditDisplayPanel.add(editSacFlyPanel);
+		gameToEditDisplayPanel.add(editSacBuntPanel);
+		gameToEditDisplayPanel.add(editLineDrivePanel);
+		gameToEditDisplayPanel.add(editFlyBallPanel);
+		gameToEditDisplayPanel.add(editRBIsPanel);
+		gameToEditDisplayPanel.add(editRunsScoredPanel);
+		gameToEditDisplayPanel.add(editStolenBasesPanel);
+		editGameSaveChangesPanel.add(editGameSaveChangesButton);
+		gameToEditDisplayPanel.add(editGameSaveChangesPanel);
 		homeButtonPanel.add(homeButton); //home button
 
 		//set unneeded buttons/panels to false visibility
@@ -513,6 +650,9 @@ public class SabretrackerGUI extends JPanel
 		newSeasonAddGamePanel.setVisible(false);
 		addGameStatsPanel.setVisible(false);
 		addEditShowStatsPanel.setVisible(false);
+		editGameInstructionsPanel.setVisible(false);
+		gameToEditDisplayPanel.setVisible(false);
+		gameToEditDisplayPanel.setVisible(false);
 		homeButton.setVisible(false);
 	
 		//panels need to be added on top of the background image
@@ -677,10 +817,70 @@ public class SabretrackerGUI extends JPanel
 			String[] splitGameChoice = gameChoice.split(",|\\s"); //split the string into pieces
 			int gameNum = Integer.parseInt(splitGameChoice[1]);//extract game number
 			OneGame gameToEditDisplay = new OneGame();
-			gameToEditDisplay = ts.editStatsOfGame(gameNum);
-			//need to finish here
+			gameToEditDisplay = ts.editStatsOfGame(gameNum); //set gameToEditDisplay to use in JTextFields
+			editGameInstructionLabel.setText("Edit Stats for Game #" + gameToEditDisplay.getGameNumber() 
+					+ " and Save Changes:");
+			selectGameToEditPanel.add(editGameInstructionsPanel);//add panels so they appear in order
+			selectGameToEditPanel.add(gameToEditDisplayPanel);
+			editGameInstructionsPanel.setVisible(true);
+			gameToEditDisplayPanel.setVisible(true);
+			//set JTextAreas to current value
+			dateEntry.setText(gameToEditDisplay.getGameDate().toString());
+			plateAppearancesEntry.setText(Integer.toString(gameToEditDisplay.getPlateAppearances()));
+			walksEntry.setText(Integer.toString(gameToEditDisplay.getWalks()));
+			HBPsEntry.setText(Integer.toString(gameToEditDisplay.getHBPs()));
+			totalHitsEntry.setText(Integer.toString(gameToEditDisplay.getTotalHits()));
+			outFCOrErrorEntry.setText(Integer.toString(gameToEditDisplay.getOutFCOrError()));
+			singlesEntry.setText(Integer.toString(gameToEditDisplay.getSingles()));
+			doublesEntry.setText(Integer.toString(gameToEditDisplay.getDoubles()));
+			triplesEntry.setText(Integer.toString(gameToEditDisplay.getTriples()));
+			homeRunsEntry.setText(Integer.toString(gameToEditDisplay.getHomeRuns()));
+			strikeoutSwingingEntry.setText(Integer.toString(gameToEditDisplay.getStrikeoutSwinging()));
+			strikeoutLookingEntry.setText(Integer.toString(gameToEditDisplay.getStrikeoutLooking()));
+			sacFlyEntry.setText(Integer.toString(gameToEditDisplay.getSacFly()));
+			sacBuntEntry.setText(Integer.toString(gameToEditDisplay.getSacBunt()));
+			lineDriveEntry.setText(Integer.toString(gameToEditDisplay.getLineDrive()));
+			flyBallEntry.setText(Integer.toString(gameToEditDisplay.getFlyBall()));
+			RBIsEntry.setText(Integer.toString(gameToEditDisplay.getRBIs()));
+			runsScoredEntry.setText(Integer.toString(gameToEditDisplay.getRunsScored()));
+			stolenBasesEntry.setText(Integer.toString(gameToEditDisplay.getStolenBases()));
 		}
 	}
+	
+	class editGameSaveChangesButton implements ActionListener
+	{
+		public void actionPerformed(ActionEvent e)
+		{
+			//split the Label string to extract game number
+			String[] splitString = editGameInstructionLabel.getText().split("#");
+			String[] splitStringForGameNum = splitString[1].split("\\s");
+			int gameNum = Integer.parseInt(splitStringForGameNum[0]);
+			System.out.println("Save Changes #:" + gameNum);
+			OneGame updatedGame = new OneGame();
+			updatedGame.setGameNumber(gameNum);
+			//get input from JTextField
+			updatedGame.setPlateAppearances(Integer.parseInt(plateAppearancesEntry.getText()));
+			updatedGame.setWalks(Integer.parseInt(walksEntry.getText()));
+			updatedGame.setHBPs(Integer.parseInt(HBPsEntry.getText()));
+			updatedGame.setTotalHits(Integer.parseInt(totalHitsEntry.getText()));
+			updatedGame.setOutFCOrError(Integer.parseInt(outFCOrErrorEntry.getText()));
+			updatedGame.setSingles(Integer.parseInt(singlesEntry.getText()));
+			updatedGame.setDoubles(Integer.parseInt(doublesEntry.getText()));
+			updatedGame.setTriples(Integer.parseInt(triplesEntry.getText()));
+			updatedGame.setHomeRuns(Integer.parseInt(homeRunsEntry.getText()));
+			updatedGame.setStrikeoutSwinging(Integer.parseInt(strikeoutSwingingEntry.getText()));
+			updatedGame.setStrikeoutLooking(Integer.parseInt(strikeoutLookingEntry.getText()));
+			updatedGame.setSacFly(Integer.parseInt(sacFlyEntry.getText()));
+			updatedGame.setSacBunt(Integer.parseInt(sacBuntEntry.getText()));
+			updatedGame.setLineDrive(Integer.parseInt(lineDriveEntry.getText()));
+			updatedGame.setFlyBall(Integer.parseInt(flyBallEntry.getText()));
+			updatedGame.setRBIs(Integer.parseInt(RBIsEntry.getText()));
+			updatedGame.setRunsScored(Integer.parseInt(runsScoredEntry.getText()));
+			updatedGame.setStolenBases(Integer.parseInt(stolenBasesEntry.getText()));
+			ts.updateGameStats(updatedGame);
+		}
+	}
+	
 	class showStatsButton implements ActionListener
 	{
 		public void actionPerformed(ActionEvent e)
@@ -693,6 +893,7 @@ public class SabretrackerGUI extends JPanel
 	{
 		public void actionPerformed(ActionEvent e)
 		{
+			//get the input from JTextField
 			String date = dateEntry.getText();
 			int plateAps = Integer.parseInt(plateAppearancesEntry.getText());
 			int walks = Integer.parseInt(walksEntry.getText());
@@ -737,6 +938,8 @@ public class SabretrackerGUI extends JPanel
 			addGameStatsPanel.setVisible(false);
 			addEditShowStatsPanel.setVisible(false);
 			selectGameToEditPanel.setVisible(false);
+			
+			//need to set all textfields to empty
 			
 			loadSeasonComboBoxPanel.removeAll();
 			loadSeasonPanel.removeAll();

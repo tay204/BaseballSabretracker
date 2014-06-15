@@ -156,8 +156,19 @@ public class TheSabretracker extends SeasonSelection
 				break;
 			}
 		}
-	
+		System.out.println("GAME TO EDIT:\n" + gameToEdit.toString());
 		return gameToEdit;
+	}
+	
+	/*
+	 * Method to update the game stats
+	 * Will take in the updated stats from GUI
+	 * Will update the save file by re-writing
+	 */
+	public void updateGameStats (OneGame update)
+	{
+		System.out.println("UPDATED GAME:\n" + update.toString());
+		//need to make all the GUI labels and entries separate
 	}
 	
 	/*
