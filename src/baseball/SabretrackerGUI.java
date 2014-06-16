@@ -131,6 +131,25 @@ public class SabretrackerGUI extends JPanel
 	JLabel editGameInstructionLabel = new JLabel();
 	//edit stats page
 	JLabel selectGameToEditComboLabel = new JLabel();
+	JLabel editGameDateLabel = new JLabel();
+	JLabel editPlateAppearancesLabel = new JLabel();
+	JLabel editWalksLabel = new JLabel();
+	JLabel editHBPsLabel = new JLabel();
+	JLabel editTotalHitsLabel = new JLabel();
+	JLabel editOutFCOrErrorLabel = new JLabel();
+	JLabel editSinglesLabel = new JLabel();
+	JLabel editDoublesLabel = new JLabel();
+	JLabel editTriplesLabel = new JLabel();
+	JLabel editHomeRunsLabel = new JLabel();
+	JLabel editStrikeoutSwingingLabel = new JLabel();
+	JLabel editStrikeoutLookingLabel = new JLabel();
+	JLabel editSacFlyLabel = new JLabel();
+	JLabel editSacBuntLabel = new JLabel();
+	JLabel editLineDriveLabel = new JLabel();
+	JLabel editFlyBallLabel = new JLabel();
+	JLabel editRBIsLabel = new JLabel();
+	JLabel editRunsScoredLabel = new JLabel();
+	JLabel editStolenBasesLabel = new JLabel();
 	//add stats page
 	JLabel gameDateLabel = new JLabel();
 	JLabel plateAppearancesLabel = new JLabel();
@@ -190,7 +209,26 @@ public class SabretrackerGUI extends JPanel
 	JTextField RBIsEntry = new JTextField(5);
 	JTextField runsScoredEntry = new JTextField(5);
 	JTextField stolenBasesEntry = new JTextField(5);
-	
+	//edit stats page
+	JTextField editDateEntry = new JTextField(15); 
+	JTextField editPlateAppearancesEntry = new JTextField(5);
+	JTextField editWalksEntry = new JTextField(5);
+	JTextField editHBPsEntry = new JTextField(5);
+	JTextField editTotalHitsEntry = new JTextField(5);
+	JTextField editOutFCOrErrorEntry = new JTextField(5);
+	JTextField editSinglesEntry = new JTextField(5);
+	JTextField editDoublesEntry = new JTextField(5);
+	JTextField editTriplesEntry = new JTextField(5);
+	JTextField editHomeRunsEntry = new JTextField(5);
+	JTextField editStrikeoutSwingingEntry = new JTextField(5);
+	JTextField editStrikeoutLookingEntry = new JTextField(5);
+	JTextField editSacFlyEntry = new JTextField(5);
+	JTextField editSacBuntEntry = new JTextField(5);
+	JTextField editLineDriveEntry = new JTextField(5);
+	JTextField editFlyBallEntry = new JTextField(5);
+	JTextField editRBIsEntry = new JTextField(5);
+	JTextField editRunsScoredEntry = new JTextField(5);
+	JTextField editStolenBasesEntry = new JTextField(5);
 	
 	//set up combo box for seasons
 	String seasons[] = {"Spring", "Summer", "Fall", "Winter"};
@@ -340,10 +378,11 @@ public class SabretrackerGUI extends JPanel
 		Font medFont = new Font("Helvetica Bold", Font.BOLD, 20);
 		Font smallFont = new Font("Helvetica Bold", Font.BOLD, 15);
 		
+		
 		//set up label appearances
 		//title page
 		titleLabel.setFont(titleFont); 
-		titleLabel.setForeground(Color.WHITE);
+		titleLabel.setForeground(Color.LIGHT_GRAY);
 		titleQuestionLabel.setFont(bigFont);
 		titleQuestionLabel.setForeground(Color.WHITE);
 		//new season page
@@ -364,6 +403,44 @@ public class SabretrackerGUI extends JPanel
 		selectGameToEditComboLabel.setForeground(Color.WHITE);
 		editGameInstructionLabel.setFont(bigFont);
 		editGameInstructionLabel.setForeground(Color.WHITE);
+		editGameDateLabel.setFont(medFont); 
+		editGameDateLabel.setForeground(Color.WHITE);
+		editPlateAppearancesLabel.setFont(medFont);
+		editPlateAppearancesLabel.setForeground(Color.WHITE);
+		editWalksLabel.setFont(medFont); 
+		editWalksLabel.setForeground(Color.WHITE);
+		editHBPsLabel.setFont(medFont);
+		editHBPsLabel.setForeground(Color.WHITE);
+		editTotalHitsLabel.setFont(medFont);
+		editTotalHitsLabel.setForeground(Color.WHITE);
+		editOutFCOrErrorLabel.setFont(medFont);
+		editOutFCOrErrorLabel.setForeground(Color.WHITE);
+		editSinglesLabel.setFont(medFont);
+		editSinglesLabel.setForeground(Color.WHITE);
+		editDoublesLabel.setFont(medFont);
+		editDoublesLabel.setForeground(Color.WHITE);
+		editTriplesLabel.setFont(medFont);
+		editTriplesLabel.setForeground(Color.WHITE);
+		editHomeRunsLabel.setFont(medFont);
+		editHomeRunsLabel.setForeground(Color.WHITE);
+		editStrikeoutSwingingLabel.setFont(medFont);
+		editStrikeoutSwingingLabel.setForeground(Color.WHITE);
+		editStrikeoutLookingLabel.setFont(medFont);
+		editStrikeoutLookingLabel.setForeground(Color.WHITE);
+		editSacFlyLabel.setFont(medFont);
+		editSacFlyLabel.setForeground(Color.WHITE);
+		editSacBuntLabel.setFont(medFont);
+		editSacBuntLabel.setForeground(Color.WHITE);
+		editLineDriveLabel.setFont(medFont);
+		editLineDriveLabel.setForeground(Color.WHITE);
+		editFlyBallLabel.setFont(medFont);
+		editFlyBallLabel.setForeground(Color.WHITE);
+		editRBIsLabel.setFont(medFont);
+		editRBIsLabel.setForeground(Color.WHITE);
+		editRunsScoredLabel.setFont(medFont);
+		editRunsScoredLabel.setForeground(Color.WHITE);
+		editStolenBasesLabel.setFont(medFont);
+		editStolenBasesLabel.setForeground(Color.WHITE);
 		//add stats label
 		gameDateLabel.setFont(medFont); 
 		gameDateLabel.setForeground(Color.WHITE);
@@ -416,6 +493,25 @@ public class SabretrackerGUI extends JPanel
 		loadSeasonChoiceLabel.setText("Select a Season to Load:"); 
 		//edit game panel
 		selectGameToEditComboLabel.setText("Select a Game to Edit:"); 
+		editGameDateLabel.setText("Enter the Game Date:"); 
+		editPlateAppearancesLabel.setText("Plate Appearances:");
+		editWalksLabel.setText("Walks:");
+		editHBPsLabel.setText("HBPs:");
+		editTotalHitsLabel.setText("Total Hits:");
+		editOutFCOrErrorLabel.setText("Outs/Fielder's Choice/Errors/K's:");
+		editSinglesLabel.setText("Singles:");
+		editDoublesLabel.setText("Doubles:");
+		editTriplesLabel.setText("Triples:");
+		editHomeRunsLabel.setText("Home Runs:");
+		editStrikeoutSwingingLabel.setText("Swinging K's:");
+		editStrikeoutLookingLabel.setText("Looking K's:");
+		editSacFlyLabel.setText("Sac Fly's:");
+		editSacBuntLabel.setText("Sac Bunts:");
+		editLineDriveLabel.setText("Line Drives:");
+		editFlyBallLabel.setText("Fly Balls:");
+		editRBIsLabel.setText("RBIs:");
+		editRunsScoredLabel.setText("Runs:");
+		editStolenBasesLabel.setText("Stolen Bases:");
 		//add stats page
 		gameDateLabel.setText("Enter the Game Date:"); 
 		plateAppearancesLabel.setText("Plate Appearances:");
@@ -580,44 +676,44 @@ public class SabretrackerGUI extends JPanel
 		addGameStatsPanel.add(stolenBasesPanel);
 		addGameStatsPanel.add(addStatsSubmitButton);
 		//edit stats page
-		editGameDatePanel.add(gameDateLabel);//first, add labels to panels for add stats page
-		editGameDatePanel.add(dateEntry);
-		editPlateAppearancesPanel.add(plateAppearancesLabel);
-		editPlateAppearancesPanel.add(plateAppearancesEntry);
-		editWalksPanel.add(walksLabel);
-		editWalksPanel.add(walksEntry);
-		editHBPsPanel.add(HBPsLabel);
-		editHBPsPanel.add(HBPsEntry);
-		editTotalHitsPanel.add(totalHitsLabel);
-		editTotalHitsPanel.add(totalHitsEntry);
-		editOutFCOrErrorPanel.add(outFCOrErrorLabel);
-		editOutFCOrErrorPanel.add(outFCOrErrorEntry);
-		editSinglesPanel.add(singlesLabel);
-		editSinglesPanel.add(singlesEntry);
-		editDoublesPanel.add(doublesLabel);
-		editDoublesPanel.add(doublesEntry);
-		editTriplesPanel.add(triplesLabel);
-		editTriplesPanel.add(triplesEntry);
-		editHomeRunsPanel.add(homeRunsLabel);
-		editHomeRunsPanel.add(homeRunsEntry);
-		editStrikeoutSwingingPanel.add(strikeoutSwingingLabel);
-		editStrikeoutSwingingPanel.add(strikeoutSwingingEntry);
-		editStrikeoutLookingPanel.add(strikeoutLookingLabel);
-		editStrikeoutLookingPanel.add(strikeoutLookingEntry);
-		editSacFlyPanel.add(sacFlyLabel);
-		editSacFlyPanel.add(sacFlyEntry);
-		editSacBuntPanel.add(sacBuntLabel);
-		editSacBuntPanel.add(sacBuntEntry);
-		editLineDrivePanel.add(lineDriveLabel);
-		editLineDrivePanel.add(lineDriveEntry);
-		editFlyBallPanel.add(flyBallLabel);
-		editFlyBallPanel.add(flyBallEntry);
-		editRBIsPanel.add(RBIsLabel);
-		editRBIsPanel.add(RBIsEntry);
-		editRunsScoredPanel.add(runsScoredLabel);
-		editRunsScoredPanel.add(runsScoredEntry);
-		editStolenBasesPanel.add(stolenBasesLabel);
-		editStolenBasesPanel.add(stolenBasesEntry);
+		editGameDatePanel.add(editGameDateLabel);//first, add labels to panels for add stats page
+		editGameDatePanel.add(editDateEntry);
+		editPlateAppearancesPanel.add(editPlateAppearancesLabel);
+		editPlateAppearancesPanel.add(editPlateAppearancesEntry);
+		editWalksPanel.add(editWalksLabel);
+		editWalksPanel.add(editWalksEntry);
+		editHBPsPanel.add(editHBPsLabel);
+		editHBPsPanel.add(editHBPsEntry);
+		editTotalHitsPanel.add(editTotalHitsLabel);
+		editTotalHitsPanel.add(editTotalHitsEntry);
+		editOutFCOrErrorPanel.add(editOutFCOrErrorLabel);
+		editOutFCOrErrorPanel.add(editOutFCOrErrorEntry);
+		editSinglesPanel.add(editSinglesLabel);
+		editSinglesPanel.add(editSinglesEntry);
+		editDoublesPanel.add(editDoublesLabel);
+		editDoublesPanel.add(editDoublesEntry);
+		editTriplesPanel.add(editTriplesLabel);
+		editTriplesPanel.add(editTriplesEntry);
+		editHomeRunsPanel.add(editHomeRunsLabel);
+		editHomeRunsPanel.add(editHomeRunsEntry);
+		editStrikeoutSwingingPanel.add(editStrikeoutSwingingLabel);
+		editStrikeoutSwingingPanel.add(editStrikeoutSwingingEntry);
+		editStrikeoutLookingPanel.add(editStrikeoutLookingLabel);
+		editStrikeoutLookingPanel.add(editStrikeoutLookingEntry);
+		editSacFlyPanel.add(editSacFlyLabel);
+		editSacFlyPanel.add(editSacFlyEntry);
+		editSacBuntPanel.add(editSacBuntLabel);
+		editSacBuntPanel.add(editSacBuntEntry);
+		editLineDrivePanel.add(editLineDriveLabel);
+		editLineDrivePanel.add(editLineDriveEntry);
+		editFlyBallPanel.add(editFlyBallLabel);
+		editFlyBallPanel.add(editFlyBallEntry);
+		editRBIsPanel.add(editRBIsLabel);
+		editRBIsPanel.add(editRBIsEntry);
+		editRunsScoredPanel.add(editRunsScoredLabel);
+		editRunsScoredPanel.add(editRunsScoredEntry);
+		editStolenBasesPanel.add(editStolenBasesLabel);
+		editStolenBasesPanel.add(editStolenBasesEntry);
 		editGameInstructionsPanel.add(editGameInstructionLabel);
 		gameToEditDisplayPanel.add(editGameDatePanel);
 		gameToEditDisplayPanel.add(editPlateAppearancesPanel);
@@ -825,25 +921,25 @@ public class SabretrackerGUI extends JPanel
 			editGameInstructionsPanel.setVisible(true);
 			gameToEditDisplayPanel.setVisible(true);
 			//set JTextAreas to current value
-			dateEntry.setText(gameToEditDisplay.getGameDate().toString());
-			plateAppearancesEntry.setText(Integer.toString(gameToEditDisplay.getPlateAppearances()));
-			walksEntry.setText(Integer.toString(gameToEditDisplay.getWalks()));
-			HBPsEntry.setText(Integer.toString(gameToEditDisplay.getHBPs()));
-			totalHitsEntry.setText(Integer.toString(gameToEditDisplay.getTotalHits()));
-			outFCOrErrorEntry.setText(Integer.toString(gameToEditDisplay.getOutFCOrError()));
-			singlesEntry.setText(Integer.toString(gameToEditDisplay.getSingles()));
-			doublesEntry.setText(Integer.toString(gameToEditDisplay.getDoubles()));
-			triplesEntry.setText(Integer.toString(gameToEditDisplay.getTriples()));
-			homeRunsEntry.setText(Integer.toString(gameToEditDisplay.getHomeRuns()));
-			strikeoutSwingingEntry.setText(Integer.toString(gameToEditDisplay.getStrikeoutSwinging()));
-			strikeoutLookingEntry.setText(Integer.toString(gameToEditDisplay.getStrikeoutLooking()));
-			sacFlyEntry.setText(Integer.toString(gameToEditDisplay.getSacFly()));
-			sacBuntEntry.setText(Integer.toString(gameToEditDisplay.getSacBunt()));
-			lineDriveEntry.setText(Integer.toString(gameToEditDisplay.getLineDrive()));
-			flyBallEntry.setText(Integer.toString(gameToEditDisplay.getFlyBall()));
-			RBIsEntry.setText(Integer.toString(gameToEditDisplay.getRBIs()));
-			runsScoredEntry.setText(Integer.toString(gameToEditDisplay.getRunsScored()));
-			stolenBasesEntry.setText(Integer.toString(gameToEditDisplay.getStolenBases()));
+			editDateEntry.setText(gameToEditDisplay.getGameDate().toString());
+			editPlateAppearancesEntry.setText(Integer.toString(gameToEditDisplay.getPlateAppearances()));
+			editWalksEntry.setText(Integer.toString(gameToEditDisplay.getWalks()));
+			editHBPsEntry.setText(Integer.toString(gameToEditDisplay.getHBPs()));
+			editTotalHitsEntry.setText(Integer.toString(gameToEditDisplay.getTotalHits()));
+			editOutFCOrErrorEntry.setText(Integer.toString(gameToEditDisplay.getOutFCOrError()));
+			editSinglesEntry.setText(Integer.toString(gameToEditDisplay.getSingles()));
+			editDoublesEntry.setText(Integer.toString(gameToEditDisplay.getDoubles()));
+			editTriplesEntry.setText(Integer.toString(gameToEditDisplay.getTriples()));
+			editHomeRunsEntry.setText(Integer.toString(gameToEditDisplay.getHomeRuns()));
+			editStrikeoutSwingingEntry.setText(Integer.toString(gameToEditDisplay.getStrikeoutSwinging()));
+			editStrikeoutLookingEntry.setText(Integer.toString(gameToEditDisplay.getStrikeoutLooking()));
+			editSacFlyEntry.setText(Integer.toString(gameToEditDisplay.getSacFly()));
+			editSacBuntEntry.setText(Integer.toString(gameToEditDisplay.getSacBunt()));
+			editLineDriveEntry.setText(Integer.toString(gameToEditDisplay.getLineDrive()));
+			editFlyBallEntry.setText(Integer.toString(gameToEditDisplay.getFlyBall()));
+			editRBIsEntry.setText(Integer.toString(gameToEditDisplay.getRBIs()));
+			editRunsScoredEntry.setText(Integer.toString(gameToEditDisplay.getRunsScored()));
+			editStolenBasesEntry.setText(Integer.toString(gameToEditDisplay.getStolenBases()));
 		}
 	}
 	
