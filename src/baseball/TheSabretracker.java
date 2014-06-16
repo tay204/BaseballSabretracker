@@ -116,7 +116,6 @@ public class TheSabretracker extends SeasonSelection
 		ComputeStats finalStats = new ComputeStats();
 		OneGame seasonTotals = new OneGame();
 		seasonTotals = computeSeasonTotals(gamesInTheSeason);
-		System.out.println("SEASON TOTALS:\n" + seasonTotals.toString() + "\n");
 		finalStats = calculateStats(seasonTotals);
 		System.out.println("FINAL STATS:\n" + finalStats.toString());
 		return finalStats;
@@ -145,7 +144,7 @@ public class TheSabretracker extends SeasonSelection
 	/*
 	 * Method to edit game stats
 	 */
-	public OneGame editStatsOfGame (int gameNum)
+	public OneGame gameNumberToEditStats (int gameNum)
 	{
 		OneGame gameToEdit = new OneGame();
 		for (OneGame og: gamesInTheSeason)
@@ -163,12 +162,39 @@ public class TheSabretracker extends SeasonSelection
 	/*
 	 * Method to update the game stats
 	 * Will take in the updated stats from GUI
-	 * Will update the save file by re-writing
+	 * Will update the save file by re-writing using updateGameFileAfterEdit()
 	 */
 	public void updateGameStats (OneGame update)
 	{
-		System.out.println("UPDATED GAME:\n" + update.toString());
-		//need to make all the GUI labels and entries separate
+		GameSelection gs = new GameSelection();
+		//update the game in the ArrayList
+		for (OneGame og: gamesInTheSeason)
+		{
+			if (og.getGameNumber() == update.getGameNumber()) // find matching game #s
+			{
+				//change values in ArrayList to match brought in GUI inputs
+				og.setPlateAppearances(update.getPlateAppearances());
+				og.setWalks(update.getWalks());
+				og.setHBPs(update.getHBPs());
+				og.setTotalHits(update.getTotalHits());
+				og.setOutFCOrError(update.getTotalHits());
+				og.setSingles(update.getSingles());
+				og.setDoubles(update.getDoubles());
+				og.setTriples(update.getTriples());
+				og.setHomeRuns(update.getHomeRuns());
+				og.setStrikeoutSwinging(update.getStrikeoutSwinging());
+				og.setStrikeoutLooking(update.getStrikeoutLooking());
+				og.setSacFly(update.getSacFly());
+				og.setSacBunt(update.getSacBunt());
+				og.setLineDrive(update.getLineDrive());
+				og.setFlyBall(update.getFlyBall());
+				og.setRBIs(update.getRBIs());
+				og.setRunsScored(update.getRunsScored());
+				og.setStolenBases(update.getStolenBases());
+				break;
+			}
+		}
+		gs.updateGameFileAfterEdit(currentSeason, gamesInTheSeason);
 	}
 	
 	/*
@@ -216,6 +242,8 @@ public class TheSabretracker extends SeasonSelection
 		//set stats
 		//singluar total stats set directly
 		//other stats set via methods
+		int numGames = gamesInTheSeason.size(); //gets games based on array size
+		c.setStatGamesPlayed(numGames);
 		c.setStatPAs(o.getPlateAppearances());
 		int tempABs = c.computeOfficialAtBats(o.getPlateAppearances(), o.getWalks(), 
 				o.getHBPs(), o.getSacFly(), o.getSacBunt());
@@ -282,6 +310,10 @@ public class TheSabretracker extends SeasonSelection
 		}
 		return gamesInTheSeason;
 	}
+	
+	/*
+	 * Helper method to rewrite gameFile after update
+	 */
 	
 	//getters and setters
 	public OneSeason getCurrentSeason() {

@@ -10,7 +10,7 @@ public class ComputeStats
 	 * @author yeotaJMU
 	 */
 	
-	private int statPAs, statABs, statRuns, statHits, stat2B, stat3B,
+	private int statGamesPlayed, statPAs, statABs, statRuns, statHits, stat2B, stat3B,
 		statHR, statRBI, statSB, statBB, statTotalK, statLookingK, 
 		statSwingingK, statTB, statHBP, statSacB, statSacF;
 	private double statBA, statOBP, statSLG, statOPS, statBABIP, statLDPer, 
@@ -20,6 +20,7 @@ public class ComputeStats
 	//constructors
 	public ComputeStats ()
 	{
+		setStatGamesPlayed(0);
 		statPAs = 0;
 		statABs = 0;
 		statRuns = 0;
@@ -76,7 +77,7 @@ public class ComputeStats
 	public Integer computeTotalBases (int oneB, int twoB, int threeB, int hr)
 	{
 		//total bases are calculated by adding up all bases from hits
-		statTB = oneB = (2 * twoB) + (3 * threeB) + (4 * hr);
+		statTB = oneB + (2 * twoB) + (3 * threeB) + (4 * hr);
 		return statTB;
 	}
 	
@@ -196,7 +197,8 @@ public class ComputeStats
 	 */
 	public String toString ()
 	{
-		return ("PAs: " + statPAs + "\n"
+		return ("Games: " + statGamesPlayed + "\n"
+				+ "PAs: " + statPAs + "\n"
 				+ "ABs: " + statABs + "\n"
 				+ "Runs: " + statRuns + "\n"
 				+ "Hits: " + statHits + "\n"
@@ -227,6 +229,14 @@ public class ComputeStats
 	}
 	
 	//getters and setters
+	public int getStatGamesPlayed() {
+		return statGamesPlayed;
+	}
+
+	public void setStatGamesPlayed(int statGamesPlayed) {
+		this.statGamesPlayed = statGamesPlayed;
+	}
+
 	public int getStatPAs() {
 		return statPAs;
 	}

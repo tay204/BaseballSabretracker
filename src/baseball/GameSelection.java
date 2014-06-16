@@ -46,6 +46,15 @@ public class GameSelection
 		appendStatsToGameFile(o, og);
 	}
 	
+	/*
+	 * will take in the  updated ArrayList
+	 * will overwrite the file
+	 */
+	public void updateGameFileAfterEdit (OneSeason o, ArrayList<OneGame> editedArray)
+	{
+		rewriteStatsInGameFile(o, editedArray);
+	}
+	
 	//static helping methods
 	/*
 	 * method to append the game number to the game file
@@ -94,6 +103,44 @@ public class GameSelection
 			e.printStackTrace();
 		}
 			
+	}
+	
+	/*
+	 * method to rewrite the game file
+	 */
+	private static void rewriteStatsInGameFile (OneSeason o, ArrayList<OneGame> updatedArray)
+	{
+		try{
+			//rewrite the game file with updated stats from ArrayList
+			PrintWriter outStream = new PrintWriter(new FileWriter(o.getGameSaveFile(), false));
+			for (OneGame og: updatedArray)
+			{
+				outStream.println(og.getGameNumber());
+				outStream.println(og.getGameDate());
+				outStream.println(og.getPlateAppearances());
+				outStream.println(og.getWalks());
+				outStream.println(og.getHBPs());
+				outStream.println(og.getTotalHits());
+				outStream.println(og.getOutFCOrError());
+				outStream.println(og.getSingles());
+				outStream.println(og.getDoubles());
+				outStream.println(og.getTriples());
+				outStream.println(og.getHomeRuns());
+				outStream.println(og.getStrikeoutSwinging());
+				outStream.println(og.getStrikeoutLooking());
+				outStream.println(og.getSacFly());
+				outStream.println(og.getSacBunt());
+				outStream.println(og.getLineDrive());
+				outStream.println(og.getFlyBall());
+				outStream.println(og.getRBIs());
+				outStream.println(og.getRunsScored());
+				outStream.println(og.getStolenBases());
+			}
+			outStream.close();
+		}catch (IOException e){
+			//TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 }

@@ -9,6 +9,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -19,6 +20,9 @@ import java.util.Scanner;
 
 public class SabretrackerGUI extends JPanel
 {
+	
+	private static final Color TEXT_COLOR = Color.LIGHT_GRAY; //one variable for all text colors
+	
 	public class JBackgroundPanel extends JPanel //create class JBackgroundPanel to enable background img
 	{
 		  private BufferedImage img;
@@ -62,7 +66,7 @@ public class SabretrackerGUI extends JPanel
 	JPanel addEditShowStatsPanel = new JPanel(); 
 	JPanel activeSeasonTitlePanel = new JPanel();
 	JPanel addEditButtonPanel = new JPanel();
-	JPanel showStatsPanel = new JPanel();
+	JPanel showStatsButtonPanel = new JPanel();
 	//edit stats page
 	JPanel selectGameToEditPanel = new JPanel();
 	JPanel selectGameToEditComboPanel = new JPanel(); 
@@ -110,6 +114,11 @@ public class SabretrackerGUI extends JPanel
 	JPanel RBIsPanel = new JPanel();
 	JPanel runsScoredPanel = new JPanel();
 	JPanel stolenBasesPanel = new JPanel();
+	//show stats page
+	JPanel showStatsPanel = new JPanel();
+	JPanel statsTitlePanel = new JPanel();
+	JPanel statsDisplayPart1Panel = new JPanel();
+	JPanel statsDisplayPart2Panel = new JPanel();
 	//home button always to be visible
 	JPanel homeButtonPanel = new JPanel(); 
 
@@ -170,6 +179,67 @@ public class SabretrackerGUI extends JPanel
 	JLabel RBIsLabel = new JLabel();
 	JLabel runsScoredLabel = new JLabel();
 	JLabel stolenBasesLabel = new JLabel();
+	//show stats page
+	JLabel statsTitleLabel = new JLabel();
+	JLabel showGameNumberLabel = new JLabel();
+	JLabel showPlateAppearancesLabel = new JLabel();
+	JLabel showAtBatsLabel = new JLabel();
+	JLabel showRunsLabel = new JLabel();
+	JLabel showTotalHitsLabel = new JLabel();
+	JLabel showDoublesLabel = new JLabel();
+	JLabel showTriplesLabel = new JLabel();
+	JLabel showHRLabel = new JLabel();
+	JLabel showRBIsLabel = new JLabel();
+	JLabel showSBLabel =  new JLabel();
+	JLabel showBBsLabel = new JLabel();
+	JLabel showTotalKsLabel = new JLabel();
+	JLabel showLookingKsLabel = new JLabel();
+	JLabel showSwingingKsLabel = new JLabel();
+	JLabel showAVGLabel = new JLabel();
+	JLabel showOBPLabel = new JLabel();
+	JLabel showSLGLabel = new JLabel();
+	JLabel showOPSLabel = new JLabel();
+	JLabel showTBLabel = new JLabel();
+	JLabel showHBPLabel = new JLabel();
+	JLabel showSacBuntLabel = new JLabel();
+	JLabel showSacFlyLabel = new JLabel();
+	JLabel showBABIPLabel = new JLabel();
+	JLabel showLDLabel = new JLabel();
+	JLabel showFBLabel = new JLabel();
+	JLabel showGBLabel = new JLabel();
+	JLabel showBBPerLabel = new JLabel();
+	JLabel showKPerLabel = new JLabel();
+	JLabel showHRPerFBLabel = new JLabel();
+	JLabel showGameNumberStatsLabel = new JLabel();
+	JLabel showPlateAppearancesStatsLabel = new JLabel();
+	JLabel showAtBatsStatsLabel = new JLabel();
+	JLabel showRunsStatsLabel = new JLabel();
+	JLabel showTotalHitsStatsLabel = new JLabel();
+	JLabel showDoublesStatsLabel = new JLabel();
+	JLabel showTriplesStatsLabel = new JLabel();
+	JLabel showHRStatsLabel = new JLabel();
+	JLabel showRBIsStatsLabel = new JLabel();
+	JLabel showSBStatsLabel =  new JLabel();
+	JLabel showBBsStatsLabel = new JLabel();
+	JLabel showTotalKsStatsLabel = new JLabel();
+	JLabel showLookingKsStatsLabel = new JLabel();
+	JLabel showSwingingKsStatsLabel = new JLabel();
+	JLabel showAVGStatsLabel = new JLabel();
+	JLabel showOBPStatsLabel = new JLabel();
+	JLabel showSLGStatsLabel = new JLabel();
+	JLabel showOPSStatsLabel = new JLabel();
+	JLabel showTBStatsLabel = new JLabel();
+	JLabel showHBPStatsLabel = new JLabel();
+	JLabel showSacBuntStatsLabel = new JLabel();
+	JLabel showSacFlyStatsLabel = new JLabel();
+	JLabel showBABIPStatsLabel = new JLabel();
+	JLabel showLDStatsLabel = new JLabel();
+	JLabel showFBStatsLabel = new JLabel();
+	JLabel showGBStatsLabel = new JLabel();
+	JLabel showBBPerStatsLabel = new JLabel();
+	JLabel showKPerStatsLabel = new JLabel();
+	JLabel showHRPerFBStatsLabel = new JLabel();
+	
 
 	//initialize JButton
 	JButton newSeasonButton = new JButton();
@@ -272,8 +342,8 @@ public class SabretrackerGUI extends JPanel
 		activeSeasonTitlePanel.setOpaque(false);
 		addEditButtonPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
 		addEditButtonPanel.setOpaque(false);
-		showStatsPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
-		showStatsPanel.setOpaque(false);
+		showStatsButtonPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		showStatsButtonPanel.setOpaque(false);
 		//edit stats page
 		selectGameToEditPanel.setLayout(new BoxLayout(selectGameToEditPanel, BoxLayout.Y_AXIS));
 		selectGameToEditPanel.setAlignmentX(CENTER_ALIGNMENT);
@@ -367,6 +437,14 @@ public class SabretrackerGUI extends JPanel
 		runsScoredPanel.setOpaque(false);
 		stolenBasesPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
 		stolenBasesPanel.setOpaque(false);
+		//show stats page
+		showStatsPanel.setLayout(new BoxLayout(showStatsPanel, BoxLayout.Y_AXIS));
+		statsTitlePanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		statsTitlePanel.setOpaque(false);
+		statsDisplayPart1Panel.setLayout(new GridLayout(2, 14));
+		statsDisplayPart1Panel.setBackground(Color.WHITE);
+		statsDisplayPart2Panel.setLayout(new GridLayout(2, 15));
+		statsDisplayPart2Panel.setBackground(Color.WHITE);
 		//homeButton
 		homeButtonPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
 		homeButtonPanel.setAlignmentY(BOTTOM_ALIGNMENT);
@@ -382,104 +460,221 @@ public class SabretrackerGUI extends JPanel
 		//set up label appearances
 		//title page
 		titleLabel.setFont(titleFont); 
-		titleLabel.setForeground(Color.LIGHT_GRAY);
+		titleLabel.setForeground(TEXT_COLOR);
 		titleQuestionLabel.setFont(bigFont);
-		titleQuestionLabel.setForeground(Color.WHITE);
+		titleQuestionLabel.setForeground(TEXT_COLOR);
 		//new season page
 		teamNameLabel.setFont(medFont); 
-		teamNameLabel.setForeground(Color.WHITE);
+		teamNameLabel.setForeground(TEXT_COLOR);
 		seasonSelectionLabel.setFont(medFont); 
-		seasonSelectionLabel.setForeground(Color.WHITE);
+		seasonSelectionLabel.setForeground(TEXT_COLOR);
 		yearLabel.setFont(medFont);
-		yearLabel.setForeground(Color.WHITE);
+		yearLabel.setForeground(TEXT_COLOR);
 		//load season page
 		loadSeasonChoiceLabel.setFont(bigFont); 
-		loadSeasonChoiceLabel.setForeground(Color.WHITE);
+		loadSeasonChoiceLabel.setForeground(TEXT_COLOR);
 		//add edit stats page
 		activeSeasonTitleLabel.setFont(bigFont); 
-		activeSeasonTitleLabel.setForeground(Color.WHITE);
+		activeSeasonTitleLabel.setForeground(TEXT_COLOR);
 		//edit stats page
 		selectGameToEditComboLabel.setFont(bigFont); 
-		selectGameToEditComboLabel.setForeground(Color.WHITE);
+		selectGameToEditComboLabel.setForeground(TEXT_COLOR);
 		editGameInstructionLabel.setFont(bigFont);
-		editGameInstructionLabel.setForeground(Color.WHITE);
+		editGameInstructionLabel.setForeground(TEXT_COLOR);
 		editGameDateLabel.setFont(medFont); 
-		editGameDateLabel.setForeground(Color.WHITE);
+		editGameDateLabel.setForeground(TEXT_COLOR);
 		editPlateAppearancesLabel.setFont(medFont);
-		editPlateAppearancesLabel.setForeground(Color.WHITE);
+		editPlateAppearancesLabel.setForeground(TEXT_COLOR);
 		editWalksLabel.setFont(medFont); 
-		editWalksLabel.setForeground(Color.WHITE);
+		editWalksLabel.setForeground(TEXT_COLOR);
 		editHBPsLabel.setFont(medFont);
-		editHBPsLabel.setForeground(Color.WHITE);
+		editHBPsLabel.setForeground(TEXT_COLOR);
 		editTotalHitsLabel.setFont(medFont);
-		editTotalHitsLabel.setForeground(Color.WHITE);
+		editTotalHitsLabel.setForeground(TEXT_COLOR);
 		editOutFCOrErrorLabel.setFont(medFont);
-		editOutFCOrErrorLabel.setForeground(Color.WHITE);
+		editOutFCOrErrorLabel.setForeground(TEXT_COLOR);
 		editSinglesLabel.setFont(medFont);
-		editSinglesLabel.setForeground(Color.WHITE);
+		editSinglesLabel.setForeground(TEXT_COLOR);
 		editDoublesLabel.setFont(medFont);
-		editDoublesLabel.setForeground(Color.WHITE);
+		editDoublesLabel.setForeground(TEXT_COLOR);
 		editTriplesLabel.setFont(medFont);
-		editTriplesLabel.setForeground(Color.WHITE);
+		editTriplesLabel.setForeground(TEXT_COLOR);
 		editHomeRunsLabel.setFont(medFont);
-		editHomeRunsLabel.setForeground(Color.WHITE);
+		editHomeRunsLabel.setForeground(TEXT_COLOR);
 		editStrikeoutSwingingLabel.setFont(medFont);
-		editStrikeoutSwingingLabel.setForeground(Color.WHITE);
+		editStrikeoutSwingingLabel.setForeground(TEXT_COLOR);
 		editStrikeoutLookingLabel.setFont(medFont);
-		editStrikeoutLookingLabel.setForeground(Color.WHITE);
+		editStrikeoutLookingLabel.setForeground(TEXT_COLOR);
 		editSacFlyLabel.setFont(medFont);
-		editSacFlyLabel.setForeground(Color.WHITE);
+		editSacFlyLabel.setForeground(TEXT_COLOR);
 		editSacBuntLabel.setFont(medFont);
-		editSacBuntLabel.setForeground(Color.WHITE);
+		editSacBuntLabel.setForeground(TEXT_COLOR);
 		editLineDriveLabel.setFont(medFont);
-		editLineDriveLabel.setForeground(Color.WHITE);
+		editLineDriveLabel.setForeground(TEXT_COLOR);
 		editFlyBallLabel.setFont(medFont);
-		editFlyBallLabel.setForeground(Color.WHITE);
+		editFlyBallLabel.setForeground(TEXT_COLOR);
 		editRBIsLabel.setFont(medFont);
-		editRBIsLabel.setForeground(Color.WHITE);
+		editRBIsLabel.setForeground(TEXT_COLOR);
 		editRunsScoredLabel.setFont(medFont);
-		editRunsScoredLabel.setForeground(Color.WHITE);
+		editRunsScoredLabel.setForeground(TEXT_COLOR);
 		editStolenBasesLabel.setFont(medFont);
-		editStolenBasesLabel.setForeground(Color.WHITE);
+		editStolenBasesLabel.setForeground(TEXT_COLOR);
 		//add stats label
 		gameDateLabel.setFont(medFont); 
-		gameDateLabel.setForeground(Color.WHITE);
+		gameDateLabel.setForeground(TEXT_COLOR);
 		plateAppearancesLabel.setFont(medFont);
-		plateAppearancesLabel.setForeground(Color.WHITE);
+		plateAppearancesLabel.setForeground(TEXT_COLOR);
 		walksLabel.setFont(medFont); 
-		walksLabel.setForeground(Color.WHITE);
+		walksLabel.setForeground(TEXT_COLOR);
 		HBPsLabel.setFont(medFont);
-		HBPsLabel.setForeground(Color.WHITE);
+		HBPsLabel.setForeground(TEXT_COLOR);
 		totalHitsLabel.setFont(medFont);
-		totalHitsLabel.setForeground(Color.WHITE);
+		totalHitsLabel.setForeground(TEXT_COLOR);
 		outFCOrErrorLabel.setFont(medFont);
-		outFCOrErrorLabel.setForeground(Color.WHITE);
+		outFCOrErrorLabel.setForeground(TEXT_COLOR);
 		singlesLabel.setFont(medFont);
-		singlesLabel.setForeground(Color.WHITE);
+		singlesLabel.setForeground(TEXT_COLOR);
 		doublesLabel.setFont(medFont);
-		doublesLabel.setForeground(Color.WHITE);
+		doublesLabel.setForeground(TEXT_COLOR);
 		triplesLabel.setFont(medFont);
-		triplesLabel.setForeground(Color.WHITE);
+		triplesLabel.setForeground(TEXT_COLOR);
 		homeRunsLabel.setFont(medFont);
-		homeRunsLabel.setForeground(Color.WHITE);
+		homeRunsLabel.setForeground(TEXT_COLOR);
 		strikeoutSwingingLabel.setFont(medFont);
-		strikeoutSwingingLabel.setForeground(Color.WHITE);
+		strikeoutSwingingLabel.setForeground(TEXT_COLOR);
 		strikeoutLookingLabel.setFont(medFont);
-		strikeoutLookingLabel.setForeground(Color.WHITE);
+		strikeoutLookingLabel.setForeground(TEXT_COLOR);
 		sacFlyLabel.setFont(medFont);
-		sacFlyLabel.setForeground(Color.WHITE);
+		sacFlyLabel.setForeground(TEXT_COLOR);
 		sacBuntLabel.setFont(medFont);
-		sacBuntLabel.setForeground(Color.WHITE);
+		sacBuntLabel.setForeground(TEXT_COLOR);
 		lineDriveLabel.setFont(medFont);
-		lineDriveLabel.setForeground(Color.WHITE);
+		lineDriveLabel.setForeground(TEXT_COLOR);
 		flyBallLabel.setFont(medFont);
-		flyBallLabel.setForeground(Color.WHITE);
+		flyBallLabel.setForeground(TEXT_COLOR);
 		RBIsLabel.setFont(medFont);
-		RBIsLabel.setForeground(Color.WHITE);
+		RBIsLabel.setForeground(TEXT_COLOR);
 		runsScoredLabel.setFont(medFont);
-		runsScoredLabel.setForeground(Color.WHITE);
+		runsScoredLabel.setForeground(TEXT_COLOR);
 		stolenBasesLabel.setFont(medFont);
-		stolenBasesLabel.setForeground(Color.WHITE);
+		stolenBasesLabel.setForeground(TEXT_COLOR);
+		//show stats
+		showGameNumberLabel.setFont(smallFont);
+		showGameNumberLabel.setForeground(Color.BLACK);
+		showPlateAppearancesLabel.setFont(smallFont);
+		showPlateAppearancesLabel.setForeground(Color.BLACK);
+		showAtBatsLabel.setFont(smallFont);
+		showAtBatsLabel.setForeground(Color.BLACK);
+		showRunsLabel.setFont(smallFont);
+		showRunsLabel.setForeground(Color.BLACK);
+		showTotalHitsLabel.setFont(smallFont);
+		showTotalHitsLabel.setForeground(Color.BLACK);
+		showDoublesLabel.setFont(smallFont);
+		showDoublesLabel.setForeground(Color.BLACK);
+		showTriplesLabel.setFont(smallFont);
+		showTriplesLabel.setForeground(Color.BLACK);
+		showHRLabel.setFont(smallFont);
+		showHRLabel.setForeground(Color.BLACK);
+		showRBIsLabel.setFont(smallFont);
+		showRBIsLabel.setForeground(Color.BLACK);
+		showSBLabel.setFont(smallFont);
+		showSBLabel.setForeground(Color.BLACK);
+		showBBsLabel.setFont(smallFont);
+		showBBsLabel.setForeground(Color.BLACK);
+		showTotalKsLabel.setFont(smallFont);
+		showTotalKsLabel.setForeground(Color.BLACK);
+		showLookingKsLabel.setFont(smallFont);
+		showLookingKsLabel.setForeground(Color.BLACK);
+		showSwingingKsLabel.setFont(smallFont);
+		showSwingingKsLabel.setForeground(Color.BLACK);
+		showAVGLabel.setFont(smallFont);
+		showAVGLabel.setForeground(Color.BLACK);
+		showOBPLabel.setFont(smallFont);
+		showOBPLabel.setForeground(Color.BLACK);
+		showSLGLabel.setFont(smallFont);
+		showSLGLabel.setForeground(Color.BLACK);
+		showOPSLabel.setFont(smallFont);
+		showOPSLabel.setForeground(Color.BLACK);
+		showTBLabel.setFont(smallFont);
+		showTBLabel.setForeground(Color.BLACK);
+		showHBPLabel.setFont(smallFont);
+		showHBPLabel.setForeground(Color.BLACK);
+		showSacBuntLabel.setFont(smallFont);
+		showSacBuntLabel.setForeground(Color.BLACK);
+		showSacFlyLabel.setFont(smallFont);
+		showSacFlyLabel.setForeground(Color.BLACK);
+		showBABIPLabel.setFont(smallFont);
+		showBABIPLabel.setForeground(Color.BLACK);
+		showLDLabel.setFont(smallFont);
+		showLDLabel.setForeground(Color.BLACK);
+		showFBLabel.setFont(smallFont);
+		showFBLabel.setForeground(Color.BLACK);
+		showGBLabel.setFont(smallFont);
+		showGBLabel.setForeground(Color.BLACK);
+		showBBPerLabel.setFont(smallFont);
+		showBBPerLabel.setForeground(Color.BLACK);
+		showKPerLabel.setFont(smallFont);
+		showKPerLabel.setForeground(Color.BLACK);
+		showHRPerFBLabel.setFont(smallFont);
+		showHRPerFBLabel.setForeground(Color.BLACK);
+		showGameNumberStatsLabel.setFont(smallFont);
+		showGameNumberStatsLabel.setForeground(Color.BLACK);
+		showPlateAppearancesStatsLabel.setFont(smallFont);
+		showPlateAppearancesStatsLabel.setForeground(Color.BLACK);
+		showAtBatsStatsLabel.setFont(smallFont);
+		showAtBatsStatsLabel.setForeground(Color.BLACK);
+		showRunsStatsLabel.setFont(smallFont);
+		showRunsStatsLabel.setForeground(Color.BLACK);
+		showTotalHitsStatsLabel.setFont(smallFont);
+		showTotalHitsStatsLabel.setForeground(Color.BLACK);
+		showDoublesStatsLabel.setFont(smallFont);
+		showDoublesStatsLabel.setForeground(Color.BLACK);
+		showTriplesStatsLabel.setFont(smallFont);
+		showTriplesStatsLabel.setForeground(Color.BLACK);
+		showHRStatsLabel.setFont(smallFont);
+		showHRStatsLabel.setForeground(Color.BLACK);
+		showRBIsStatsLabel.setFont(smallFont);
+		showRBIsStatsLabel.setForeground(Color.BLACK);
+		showSBStatsLabel.setFont(smallFont);
+		showSBStatsLabel.setForeground(Color.BLACK);
+		showBBsStatsLabel.setFont(smallFont);
+		showBBsStatsLabel.setForeground(Color.BLACK);
+		showTotalKsStatsLabel.setFont(smallFont);
+		showTotalKsStatsLabel.setForeground(Color.BLACK);
+		showLookingKsStatsLabel.setFont(smallFont);
+		showLookingKsStatsLabel.setForeground(Color.BLACK);
+		showSwingingKsStatsLabel.setFont(smallFont);
+		showSwingingKsStatsLabel.setForeground(Color.BLACK);
+		showAVGStatsLabel.setFont(smallFont);
+		showAVGStatsLabel.setForeground(Color.BLACK);
+		showOBPStatsLabel.setFont(smallFont);
+		showOBPStatsLabel.setForeground(Color.BLACK);
+		showSLGStatsLabel.setFont(smallFont);
+		showSLGStatsLabel.setForeground(Color.BLACK);
+		showOPSStatsLabel.setFont(smallFont);
+		showOPSStatsLabel.setForeground(Color.BLACK);
+		showTBStatsLabel.setFont(smallFont);
+		showTBStatsLabel.setForeground(Color.BLACK);
+		showHBPStatsLabel.setFont(smallFont);
+		showHBPStatsLabel.setForeground(Color.BLACK);
+		showSacBuntStatsLabel.setFont(smallFont);
+		showSacBuntStatsLabel.setForeground(Color.BLACK);
+		showSacFlyStatsLabel.setFont(smallFont);
+		showSacFlyStatsLabel.setForeground(Color.BLACK);
+		showBABIPStatsLabel.setFont(smallFont);
+		showBABIPStatsLabel.setForeground(Color.BLACK);
+		showLDStatsLabel.setFont(smallFont);
+		showLDStatsLabel.setForeground(Color.BLACK);
+		showFBStatsLabel.setFont(smallFont);
+		showFBStatsLabel.setForeground(Color.BLACK);
+		showGBStatsLabel.setFont(smallFont);
+		showGBStatsLabel.setForeground(Color.BLACK);
+		showBBPerStatsLabel.setFont(smallFont);
+		showBBPerStatsLabel.setForeground(Color.BLACK);
+		showKPerStatsLabel.setFont(smallFont);
+		showKPerStatsLabel.setForeground(Color.BLACK);
+		showHRPerFBStatsLabel.setFont(smallFont);
+		showHRPerFBStatsLabel.setForeground(Color.BLACK);
 		
 		//set label texts
 		//title page
@@ -532,6 +727,37 @@ public class SabretrackerGUI extends JPanel
 		RBIsLabel.setText("RBIs:");
 		runsScoredLabel.setText("Runs:");
 		stolenBasesLabel.setText("Stolen Bases:");
+		//show stats
+		showGameNumberLabel.setText("G");
+		showPlateAppearancesLabel.setText("PA");
+		showAtBatsLabel.setText("AB");
+		showRunsLabel.setText("R");
+		showTotalHitsLabel.setText("H");
+		showDoublesLabel.setText("2B");
+		showTriplesLabel.setText("3B");
+		showHRLabel.setText("HR");
+		showRBIsLabel.setText("RBI");
+		showSBLabel.setText("SB");
+		showBBsLabel.setText("BB");
+		showTotalKsLabel.setText("K");
+		showLookingKsLabel.setText("Looking K");
+		showSwingingKsLabel.setText("Swinging K");
+		showAVGLabel.setText("AVG");
+		showOBPLabel.setText("OBP");
+		showSLGLabel.setText("SLG");
+		showOPSLabel.setText("OPS");
+		showTBLabel.setText("TB");
+		showHBPLabel.setText("HBP");
+		showSacBuntLabel.setText("Sac Bunt");
+		showSacFlyLabel.setText("Sac Fly");
+		showBABIPLabel.setText("BABIP");
+		showLDLabel.setText("LD%");
+		showFBLabel.setText("FB%");
+		showGBLabel.setText("GB%");
+		showBBPerLabel.setText("BB%");
+		showKPerLabel.setText("K%");
+		showHRPerFBLabel.setText("HR/FB%");
+		
 		
 		//set up textfield texts
 		dateEntry.setText("XX/XX/XXXX");
@@ -569,6 +795,9 @@ public class SabretrackerGUI extends JPanel
 		//edit stats page
 		gameToEditSubmitButton.setText(" Submit "); 
 		editGameSaveChangesButton.setText(" Save Changes ");
+		//show stats page
+		statsTitleLabel.setFont(bigFont);
+		statsTitleLabel.setForeground(TEXT_COLOR);
 		//home button
 		homeButton.setText(" Home "); 
 		homeButton.setFont(medFont);
@@ -612,11 +841,11 @@ public class SabretrackerGUI extends JPanel
 		addEditShowStatsPanel.add(activeSeasonTitlePanel); 
 		addEditButtonPanel.add(addGameButton); 
 		addEditButtonPanel.add(editGameButton);
-		showStatsPanel.add(showStatsButton);
-		showStatsPanel.add(Box.createVerticalStrut(150));
+		showStatsButtonPanel.add(showStatsButton);
+		showStatsButtonPanel.add(Box.createVerticalStrut(150));
 		addEditShowStatsPanel.add(addEditButtonPanel);
-		addEditShowStatsPanel.add(showStatsPanel);
-		//stats page		
+		addEditShowStatsPanel.add(showStatsButtonPanel);
+		//add stats page		
 		gameDatePanel.add(gameDateLabel);//first, add labels to panels for add stats page
 		gameDatePanel.add(dateEntry);
 		plateAppearancesPanel.add(plateAppearancesLabel);
@@ -676,7 +905,7 @@ public class SabretrackerGUI extends JPanel
 		addGameStatsPanel.add(stolenBasesPanel);
 		addGameStatsPanel.add(addStatsSubmitButton);
 		//edit stats page
-		editGameDatePanel.add(editGameDateLabel);//first, add labels to panels for add stats page
+		editGameDatePanel.add(editGameDateLabel);//first, add labels to panels for edit stats page
 		editGameDatePanel.add(editDateEntry);
 		editPlateAppearancesPanel.add(editPlateAppearancesLabel);
 		editPlateAppearancesPanel.add(editPlateAppearancesEntry);
@@ -736,6 +965,69 @@ public class SabretrackerGUI extends JPanel
 		gameToEditDisplayPanel.add(editStolenBasesPanel);
 		editGameSaveChangesPanel.add(editGameSaveChangesButton);
 		gameToEditDisplayPanel.add(editGameSaveChangesPanel);
+		//show stats page
+		statsTitlePanel.add(statsTitleLabel);
+		showStatsPanel.add(statsTitlePanel);
+		statsDisplayPart1Panel.add(showGameNumberLabel); //fill the tables with stats
+		statsDisplayPart1Panel.add(showPlateAppearancesLabel);
+		statsDisplayPart1Panel.add(showAtBatsLabel);
+		statsDisplayPart1Panel.add(showRunsLabel);
+		statsDisplayPart1Panel.add(showTotalHitsLabel);
+		statsDisplayPart1Panel.add(showDoublesLabel);
+		statsDisplayPart1Panel.add(showTriplesLabel);
+		statsDisplayPart1Panel.add(showHRLabel);
+		statsDisplayPart1Panel.add(showRBIsLabel);
+		statsDisplayPart1Panel.add(showSBLabel);
+		statsDisplayPart1Panel.add(showBBsLabel);
+		statsDisplayPart1Panel.add(showTotalKsLabel);
+		statsDisplayPart1Panel.add(showLookingKsLabel);
+		statsDisplayPart1Panel.add(showSwingingKsLabel);
+		statsDisplayPart1Panel.add(showGameNumberStatsLabel);
+		statsDisplayPart1Panel.add(showPlateAppearancesStatsLabel);
+		statsDisplayPart1Panel.add(showAtBatsStatsLabel);
+		statsDisplayPart1Panel.add(showRunsStatsLabel);
+		statsDisplayPart1Panel.add(showTotalHitsStatsLabel);
+		statsDisplayPart1Panel.add(showDoublesStatsLabel);
+		statsDisplayPart1Panel.add(showTriplesStatsLabel);
+		statsDisplayPart1Panel.add(showHRStatsLabel);
+		statsDisplayPart1Panel.add(showRBIsStatsLabel);
+		statsDisplayPart1Panel.add(showSBStatsLabel);
+		statsDisplayPart1Panel.add(showBBsStatsLabel);
+		statsDisplayPart1Panel.add(showTotalKsStatsLabel);
+		statsDisplayPart1Panel.add(showLookingKsStatsLabel);
+		statsDisplayPart1Panel.add(showSwingingKsStatsLabel);
+		statsDisplayPart2Panel.add(showAVGLabel); //table 2
+		statsDisplayPart2Panel.add(showOBPLabel);
+		statsDisplayPart2Panel.add(showSLGLabel);
+		statsDisplayPart2Panel.add(showOPSLabel);
+		statsDisplayPart2Panel.add(showTBLabel);
+		statsDisplayPart2Panel.add(showHBPLabel);
+		statsDisplayPart2Panel.add(showSacBuntLabel);
+		statsDisplayPart2Panel.add(showSacFlyLabel);
+		statsDisplayPart2Panel.add(showBABIPLabel);
+		statsDisplayPart2Panel.add(showLDLabel);
+		statsDisplayPart2Panel.add(showFBLabel);
+		statsDisplayPart2Panel.add(showGBLabel);
+		statsDisplayPart2Panel.add(showBBPerLabel);
+		statsDisplayPart2Panel.add(showKPerLabel);
+		statsDisplayPart2Panel.add(showHRPerFBLabel);
+		statsDisplayPart2Panel.add(showAVGStatsLabel);
+		statsDisplayPart2Panel.add(showOBPStatsLabel);
+		statsDisplayPart2Panel.add(showSLGStatsLabel);
+		statsDisplayPart2Panel.add(showOPSStatsLabel);
+		statsDisplayPart2Panel.add(showTBStatsLabel);
+		statsDisplayPart2Panel.add(showHBPStatsLabel);
+		statsDisplayPart2Panel.add(showSacBuntStatsLabel);
+		statsDisplayPart2Panel.add(showSacFlyStatsLabel);
+		statsDisplayPart2Panel.add(showBABIPStatsLabel);
+		statsDisplayPart2Panel.add(showLDStatsLabel);
+		statsDisplayPart2Panel.add(showFBStatsLabel);
+		statsDisplayPart2Panel.add(showGBStatsLabel);
+		statsDisplayPart2Panel.add(showBBPerStatsLabel);
+		statsDisplayPart2Panel.add(showKPerStatsLabel);
+		statsDisplayPart2Panel.add(showHRPerFBStatsLabel);
+		showStatsPanel.add(statsDisplayPart1Panel);
+		showStatsPanel.add(statsDisplayPart2Panel);
 		homeButtonPanel.add(homeButton); //home button
 
 		//set unneeded buttons/panels to false visibility
@@ -749,6 +1041,7 @@ public class SabretrackerGUI extends JPanel
 		editGameInstructionsPanel.setVisible(false);
 		gameToEditDisplayPanel.setVisible(false);
 		gameToEditDisplayPanel.setVisible(false);
+		showStatsPanel.setVisible(false);
 		homeButton.setVisible(false);
 	
 		//panels need to be added on top of the background image
@@ -764,6 +1057,7 @@ public class SabretrackerGUI extends JPanel
 		backgroundImage.add(addGameStatsPanel);
 		backgroundImage.add(addEditShowStatsPanel);
 		backgroundImage.add(homeButtonPanel);
+		backgroundImage.add(showStatsPanel);
 		add(homeButtonPanel, BorderLayout.SOUTH);
 		
 	}
@@ -913,7 +1207,7 @@ public class SabretrackerGUI extends JPanel
 			String[] splitGameChoice = gameChoice.split(",|\\s"); //split the string into pieces
 			int gameNum = Integer.parseInt(splitGameChoice[1]);//extract game number
 			OneGame gameToEditDisplay = new OneGame();
-			gameToEditDisplay = ts.editStatsOfGame(gameNum); //set gameToEditDisplay to use in JTextFields
+			gameToEditDisplay = ts.gameNumberToEditStats(gameNum); //set gameToEditDisplay to use in JTextFields
 			editGameInstructionLabel.setText("Edit Stats for Game #" + gameToEditDisplay.getGameNumber() 
 					+ " and Save Changes:");
 			selectGameToEditPanel.add(editGameInstructionsPanel);//add panels so they appear in order
@@ -955,24 +1249,24 @@ public class SabretrackerGUI extends JPanel
 			OneGame updatedGame = new OneGame();
 			updatedGame.setGameNumber(gameNum);
 			//get input from JTextField
-			updatedGame.setPlateAppearances(Integer.parseInt(plateAppearancesEntry.getText()));
-			updatedGame.setWalks(Integer.parseInt(walksEntry.getText()));
-			updatedGame.setHBPs(Integer.parseInt(HBPsEntry.getText()));
-			updatedGame.setTotalHits(Integer.parseInt(totalHitsEntry.getText()));
-			updatedGame.setOutFCOrError(Integer.parseInt(outFCOrErrorEntry.getText()));
-			updatedGame.setSingles(Integer.parseInt(singlesEntry.getText()));
-			updatedGame.setDoubles(Integer.parseInt(doublesEntry.getText()));
-			updatedGame.setTriples(Integer.parseInt(triplesEntry.getText()));
-			updatedGame.setHomeRuns(Integer.parseInt(homeRunsEntry.getText()));
-			updatedGame.setStrikeoutSwinging(Integer.parseInt(strikeoutSwingingEntry.getText()));
-			updatedGame.setStrikeoutLooking(Integer.parseInt(strikeoutLookingEntry.getText()));
-			updatedGame.setSacFly(Integer.parseInt(sacFlyEntry.getText()));
-			updatedGame.setSacBunt(Integer.parseInt(sacBuntEntry.getText()));
-			updatedGame.setLineDrive(Integer.parseInt(lineDriveEntry.getText()));
-			updatedGame.setFlyBall(Integer.parseInt(flyBallEntry.getText()));
-			updatedGame.setRBIs(Integer.parseInt(RBIsEntry.getText()));
-			updatedGame.setRunsScored(Integer.parseInt(runsScoredEntry.getText()));
-			updatedGame.setStolenBases(Integer.parseInt(stolenBasesEntry.getText()));
+			updatedGame.setPlateAppearances(Integer.parseInt(editPlateAppearancesEntry.getText()));
+			updatedGame.setWalks(Integer.parseInt(editWalksEntry.getText()));
+			updatedGame.setHBPs(Integer.parseInt(editHBPsEntry.getText()));
+			updatedGame.setTotalHits(Integer.parseInt(editTotalHitsEntry.getText()));
+			updatedGame.setOutFCOrError(Integer.parseInt(editOutFCOrErrorEntry.getText()));
+			updatedGame.setSingles(Integer.parseInt(editSinglesEntry.getText()));
+			updatedGame.setDoubles(Integer.parseInt(editDoublesEntry.getText()));
+			updatedGame.setTriples(Integer.parseInt(editTriplesEntry.getText()));
+			updatedGame.setHomeRuns(Integer.parseInt(editHomeRunsEntry.getText()));
+			updatedGame.setStrikeoutSwinging(Integer.parseInt(editStrikeoutSwingingEntry.getText()));
+			updatedGame.setStrikeoutLooking(Integer.parseInt(editStrikeoutLookingEntry.getText()));
+			updatedGame.setSacFly(Integer.parseInt(editSacFlyEntry.getText()));
+			updatedGame.setSacBunt(Integer.parseInt(editSacBuntEntry.getText()));
+			updatedGame.setLineDrive(Integer.parseInt(editLineDriveEntry.getText()));
+			updatedGame.setFlyBall(Integer.parseInt(editFlyBallEntry.getText()));
+			updatedGame.setRBIs(Integer.parseInt(editRBIsEntry.getText()));
+			updatedGame.setRunsScored(Integer.parseInt(editRunsScoredEntry.getText()));
+			updatedGame.setStolenBases(Integer.parseInt(editStolenBasesEntry.getText()));
 			ts.updateGameStats(updatedGame);
 		}
 	}
@@ -981,8 +1275,42 @@ public class SabretrackerGUI extends JPanel
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			ts.compileSeasonStats();
+			ComputeStats statsToDisplay = ts.compileSeasonStats();
+			DecimalFormat d = new DecimalFormat(".000"); //set format to display
 			addEditShowStatsPanel.setVisible(false);
+			statsTitleLabel.setText(ts.getCurrentSeason().toString());//set name to current season
+			//set label component texts to match compiled stats
+			showGameNumberStatsLabel.setText(Integer.toString(statsToDisplay.getStatGamesPlayed()));
+			showPlateAppearancesStatsLabel.setText(Integer.toString(statsToDisplay.getStatPAs()));
+			showAtBatsStatsLabel.setText(Integer.toString(statsToDisplay.getStatABs()));
+			showRunsStatsLabel.setText(Integer.toString(statsToDisplay.getStatRuns()));
+			showTotalHitsStatsLabel.setText(Integer.toString(statsToDisplay.getStatHits()));
+			showDoublesStatsLabel.setText(Integer.toBinaryString(statsToDisplay.getStat2B()));
+			showTriplesStatsLabel.setText(Integer.toString(statsToDisplay.getStat3B()));
+			showHRStatsLabel.setText(Integer.toString(statsToDisplay.getStatHR()));
+			showRBIsStatsLabel.setText(Integer.toString(statsToDisplay.getStatRBI()));
+			showSBStatsLabel.setText(Integer.toString(statsToDisplay.getStatSB()));
+			showBBsStatsLabel.setText(Integer.toString(statsToDisplay.getStatBB()));
+			showTotalKsStatsLabel.setText(Integer.toString(statsToDisplay.getStatTotalK()));
+			showLookingKsStatsLabel.setText(Integer.toString(statsToDisplay.getStatLookingK()));
+			showSwingingKsStatsLabel.setText(Integer.toString(statsToDisplay.getStatSwingingK()));
+			showAVGStatsLabel.setText(d.format(statsToDisplay.getStatBA()));
+			showOBPStatsLabel.setText(d.format(statsToDisplay.getStatOBP()));
+			showSLGStatsLabel.setText(d.format(statsToDisplay.getStatSLG()));
+			showOPSStatsLabel.setText(d.format(statsToDisplay.getStatOPS()));
+			showTBStatsLabel.setText(Integer.toString(statsToDisplay.getStatTB()));
+			showHBPStatsLabel.setText(Integer.toString(statsToDisplay.getStatHBP()));
+			showSacBuntStatsLabel.setText(Integer.toString(statsToDisplay.getStatSacB()));
+			showSacFlyStatsLabel.setText(Integer.toString(statsToDisplay.getStatSacF()));
+			showBABIPStatsLabel.setText(d.format(statsToDisplay.getStatBABIP()));
+			showLDStatsLabel.setText(d.format(statsToDisplay.getStatLDPer()));
+			showFBStatsLabel.setText(d.format(statsToDisplay.getStatFBPer()));
+			showGBStatsLabel.setText(d.format(statsToDisplay.getStatGBPer()));
+			showBBPerStatsLabel.setText(d.format(statsToDisplay.getStatBBPer()));
+			showKPerStatsLabel.setText(d.format(statsToDisplay.getStatKPer()));
+			showHRPerFBStatsLabel.setText(d.format(statsToDisplay.getStatHRPerFB()));
+			
+			showStatsPanel.setVisible(true);
 		}
 	}
 	class addStatsSubmitButton implements ActionListener
