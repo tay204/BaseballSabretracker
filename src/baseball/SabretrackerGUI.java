@@ -59,6 +59,7 @@ public class SabretrackerGUI extends JPanel
 	JPanel yearPanel = new JPanel();
 	JPanel newSeasonSubmitButtonPanel = new JPanel();
 	JPanel newSeasonAddGamePanel = new JPanel();
+	JPanel newSeasonSubmitStatsButtonPanel = new JPanel();
 	//load season page
 	JPanel loadSeasonPanel = new JPanel(); 
 	JPanel loadSeasonComboBoxPanel = new JPanel();
@@ -119,6 +120,64 @@ public class SabretrackerGUI extends JPanel
 	JPanel statsTitlePanel = new JPanel();
 	JPanel statsDisplayPart1Panel = new JPanel();
 	JPanel statsDisplayPart2Panel = new JPanel();
+	JPanel gameCatPanel = new JPanel();
+	JPanel gameStatPanel = new JPanel();
+	JPanel plateApCatPanel = new JPanel();
+	JPanel plateApStatPanel = new JPanel();
+	JPanel atBatCatPanel = new JPanel();
+	JPanel atBatStatPanel = new JPanel();
+	JPanel runsCatPanel = new JPanel();
+	JPanel runsStatPanel = new JPanel();
+	JPanel hitsCatPanel = new JPanel();
+	JPanel hitsStatPanel = new JPanel();
+	JPanel doubleCatPanel = new JPanel();
+	JPanel doubleStatPanel = new JPanel();
+	JPanel tripleCatPanel = new JPanel();
+	JPanel tripleStatPanel = new JPanel();
+	JPanel hrCatPanel = new JPanel();
+	JPanel hrStatPanel = new JPanel();
+	JPanel rbiCatPanel = new JPanel();
+	JPanel rbiStatPanel = new JPanel();
+	JPanel sbCatPanel = new JPanel();
+	JPanel sbStatPanel = new JPanel();
+	JPanel bbCatPanel = new JPanel();
+	JPanel bbStatPanel = new JPanel();
+	JPanel kCatPanel = new JPanel();
+	JPanel kStatPanel = new JPanel();
+	JPanel lookingKCatPanel = new JPanel();
+	JPanel lookingKStatPanel = new JPanel();
+	JPanel swingingKCatPanel = new JPanel();
+	JPanel swingingKStatPanel = new JPanel();
+	JPanel avgCatPanel = new JPanel();
+	JPanel avgStatPanel = new JPanel();
+	JPanel obpCatPanel = new JPanel();
+	JPanel obpStatPanel = new JPanel();
+	JPanel slgCatPanel = new JPanel();
+	JPanel slgStatPanel = new JPanel();
+	JPanel opsCatPanel = new JPanel();
+	JPanel opsStatPanel = new JPanel();
+	JPanel tbCatPanel = new JPanel();
+	JPanel tbStatPanel = new JPanel();
+	JPanel hbpCatPanel = new JPanel();
+	JPanel hbpStatPanel = new JPanel();
+	JPanel sacBCatPanel = new JPanel();
+	JPanel sacBStatPanel = new JPanel();
+	JPanel sacFCatPanel = new JPanel();
+	JPanel sacFStatPanel = new JPanel();
+	JPanel babipCatPanel = new JPanel();
+	JPanel babipStatPanel = new JPanel();
+	JPanel ldCatPanel = new JPanel();
+	JPanel ldStatPanel = new JPanel();
+	JPanel fbCatPanel = new JPanel();
+	JPanel fbStatPanel = new JPanel();
+	JPanel gbCatPanel = new JPanel();
+	JPanel gbStatPanel = new JPanel();
+	JPanel bbPerCatPanel = new JPanel();
+	JPanel bbPerStatPanel = new JPanel();
+	JPanel kPerCatPanel = new JPanel();
+	JPanel kPerStatPanel = new JPanel();
+	JPanel hrPerCatPanel = new JPanel();
+	JPanel hrPerStatPanel = new JPanel();
 	//home button always to be visible
 	JPanel homeButtonPanel = new JPanel(); 
 
@@ -239,13 +298,13 @@ public class SabretrackerGUI extends JPanel
 	JLabel showBBPerStatsLabel = new JLabel();
 	JLabel showKPerStatsLabel = new JLabel();
 	JLabel showHRPerFBStatsLabel = new JLabel();
-	
 
 	//initialize JButton
 	JButton newSeasonButton = new JButton();
 	JButton loadSeasonButton = new JButton();
 	JButton newSeasonSubmitButton = new JButton();
 	JButton newSeasonAddGameButton = new JButton();
+	JButton newSeasonSubmitStatsButton = new JButton();
 	JButton addStatsSubmitButton = new JButton();
 	JButton loadSeasonSubmitButton = new JButton();
 	JButton addGameButton = new JButton();
@@ -306,6 +365,10 @@ public class SabretrackerGUI extends JPanel
 	JComboBox seasonToLoad; //will fill box later
 	JComboBox gameToEdit; //will fill box later
 	
+	//JScrollPane for stats display
+	JScrollPane statsScrollPart1 = new JScrollPane();
+	JScrollPane statsScrollPart2 = new JScrollPane();
+	
 
 
 	public SabretrackerGUI()
@@ -330,6 +393,8 @@ public class SabretrackerGUI extends JPanel
 		newSeasonSubmitButtonPanel.setOpaque(false);
 		newSeasonAddGamePanel.setLayout(new FlowLayout(FlowLayout.CENTER));
 		newSeasonAddGamePanel.setOpaque(false);
+		newSeasonSubmitStatsButtonPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		newSeasonSubmitStatsButtonPanel.setOpaque(false);
 		//load season page
 		loadSeasonPanel.setLayout(new BoxLayout(loadSeasonPanel, BoxLayout.Y_AXIS)); 
 		loadSeasonPanel.setOpaque(false);
@@ -439,12 +504,103 @@ public class SabretrackerGUI extends JPanel
 		stolenBasesPanel.setOpaque(false);
 		//show stats page
 		showStatsPanel.setLayout(new BoxLayout(showStatsPanel, BoxLayout.Y_AXIS));
+		showStatsPanel.setOpaque(false);
 		statsTitlePanel.setLayout(new FlowLayout(FlowLayout.CENTER));
 		statsTitlePanel.setOpaque(false);
-		statsDisplayPart1Panel.setLayout(new GridLayout(2, 14));
-		statsDisplayPart1Panel.setBackground(Color.WHITE);
-		statsDisplayPart2Panel.setLayout(new GridLayout(2, 15));
-		statsDisplayPart2Panel.setBackground(Color.WHITE);
+		gameCatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		gameStatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		gameStatPanel.setBackground(TEXT_COLOR);
+		plateApCatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		plateApStatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		plateApStatPanel.setBackground(TEXT_COLOR);
+		atBatCatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		atBatStatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		atBatStatPanel.setBackground(TEXT_COLOR);
+		runsCatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		runsStatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		runsStatPanel.setBackground(TEXT_COLOR);
+		hitsCatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		hitsStatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		hitsStatPanel.setBackground(TEXT_COLOR);
+		doubleCatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		doubleStatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		doubleStatPanel.setBackground(TEXT_COLOR);
+		tripleCatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		tripleStatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		tripleStatPanel.setBackground(TEXT_COLOR);
+		hrCatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		hrStatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		hrStatPanel.setBackground(TEXT_COLOR);
+		rbiCatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		rbiStatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		rbiStatPanel.setBackground(TEXT_COLOR);
+		sbCatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		sbStatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		sbStatPanel.setBackground(TEXT_COLOR);
+		bbCatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		bbStatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		bbStatPanel.setBackground(TEXT_COLOR);
+		kCatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		kStatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		kStatPanel.setBackground(TEXT_COLOR);
+		lookingKCatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		lookingKStatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		lookingKStatPanel.setBackground(TEXT_COLOR);
+		swingingKCatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		swingingKStatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		swingingKStatPanel.setBackground(TEXT_COLOR);
+		avgCatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		avgStatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		avgStatPanel.setBackground(TEXT_COLOR);
+		obpCatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		obpStatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		obpStatPanel.setBackground(TEXT_COLOR);
+		slgCatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		slgStatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		slgStatPanel.setBackground(TEXT_COLOR);
+		opsCatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		opsStatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		opsStatPanel.setBackground(TEXT_COLOR);
+		tbCatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		tbStatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		tbStatPanel.setBackground(TEXT_COLOR);
+		hbpCatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		hbpStatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		hbpStatPanel.setBackground(TEXT_COLOR);
+		sacBCatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		sacBStatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		sacBStatPanel.setBackground(TEXT_COLOR);
+		sacFCatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		sacFStatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		sacFStatPanel.setBackground(TEXT_COLOR);
+		babipCatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		babipStatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		babipStatPanel.setBackground(TEXT_COLOR);
+		ldCatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		ldStatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		ldStatPanel.setBackground(TEXT_COLOR);
+		fbCatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		fbStatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		fbStatPanel.setBackground(TEXT_COLOR);
+		gbCatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		gbStatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		gbStatPanel.setBackground(TEXT_COLOR);
+		bbCatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		bbPerStatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		bbPerStatPanel.setBackground(TEXT_COLOR);
+		kPerCatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		kPerStatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		kPerStatPanel.setBackground(TEXT_COLOR);
+		hrPerCatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		hrPerStatPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		hrPerStatPanel.setBackground(TEXT_COLOR);	
+		//add rest of panels here
+		statsDisplayPart1Panel.setLayout(new GridLayout(2, 14, 1, 1));
+		statsDisplayPart1Panel.setBackground(Color.BLACK);
+		statsDisplayPart2Panel.setLayout(new GridLayout(2, 15, 1, 1));
+		statsDisplayPart2Panel.setBackground(Color.BLACK);
+		statsScrollPart1.setPreferredSize(new Dimension(200, 90));
+		statsScrollPart2.setPreferredSize(new Dimension(200, 90));
 		//homeButton
 		homeButtonPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
 		homeButtonPanel.setAlignmentY(BOTTOM_ALIGNMENT);
@@ -778,6 +934,7 @@ public class SabretrackerGUI extends JPanel
 		newSeasonAddGameButton.setFont(medFont);
 		newSeasonAddGameButton.setPreferredSize(new Dimension(250, 150));
 		newSeasonAddGameButton.setFont(medFont);
+		newSeasonSubmitStatsButton.setText(" Submit ");
 		//load season page
 		loadSeasonSubmitButton.setText(" Submit ");
 		//add edit show stats page
@@ -810,6 +967,7 @@ public class SabretrackerGUI extends JPanel
 		loadSeasonButton.addActionListener(new loadSeasonButton());
 		newSeasonSubmitButton.addActionListener(new newSeasonSubmitButton());
 		newSeasonAddGameButton.addActionListener(new newSeasonAddGameButton());
+		newSeasonSubmitStatsButton.addActionListener(new newSeasonSubmitStatsButton());
 		addStatsSubmitButton.addActionListener(new addStatsSubmitButton());
 		loadSeasonSubmitButton.addActionListener(new loadSeasonSubmitButton());
 		addGameButton.addActionListener(new addGameButton());
@@ -823,17 +981,19 @@ public class SabretrackerGUI extends JPanel
 		//title page
 		sabretrackerTitlePanel.add(titleLabel); 
 		titleQuestionPanel.add(titleQuestionLabel);
-		titleQuestionPanel.add(Box.createVerticalStrut(150));	
+		titleQuestionPanel.add(Box.createVerticalStrut(100));	
 		seasonChoicePanel.add(newSeasonButton);
 		seasonChoicePanel.add(Box.createHorizontalStrut(24));//add space between buttons
 		seasonChoicePanel.add(loadSeasonButton);
 		//new season page
 		teamNamePanel.add(teamNameLabel); 
 		teamNamePanel.add(teamNameEntry);
+		teamNamePanel.add(Box.createVerticalStrut(50));
 		seasonSelectionPanel.add(seasonSelectionLabel);
 		seasonSelectionPanel.add(fourSeasons);
 		yearPanel.add(yearLabel);
 		yearPanel.add(yearEntry);
+		yearPanel.add(Box.createVerticalStrut(50));
 		newSeasonSubmitButtonPanel.add(newSeasonSubmitButton);
 		newSeasonAddGamePanel.add(newSeasonAddGameButton);
 		//add edit show stats page
@@ -842,7 +1002,7 @@ public class SabretrackerGUI extends JPanel
 		addEditButtonPanel.add(addGameButton); 
 		addEditButtonPanel.add(editGameButton);
 		showStatsButtonPanel.add(showStatsButton);
-		showStatsButtonPanel.add(Box.createVerticalStrut(150));
+		showStatsButtonPanel.add(Box.createVerticalStrut(100));
 		addEditShowStatsPanel.add(addEditButtonPanel);
 		addEditShowStatsPanel.add(showStatsButtonPanel);
 		//add stats page		
@@ -904,6 +1064,7 @@ public class SabretrackerGUI extends JPanel
 		addGameStatsPanel.add(runsScoredPanel);
 		addGameStatsPanel.add(stolenBasesPanel);
 		addGameStatsPanel.add(addStatsSubmitButton);
+		addGameStatsPanel.add(newSeasonSubmitStatsButton);
 		//edit stats page
 		editGameDatePanel.add(editGameDateLabel);//first, add labels to panels for edit stats page
 		editGameDatePanel.add(editDateEntry);
@@ -967,67 +1128,129 @@ public class SabretrackerGUI extends JPanel
 		gameToEditDisplayPanel.add(editGameSaveChangesPanel);
 		//show stats page
 		statsTitlePanel.add(statsTitleLabel);
+		statsTitlePanel.add(Box.createVerticalStrut(125));
 		showStatsPanel.add(statsTitlePanel);
-		statsDisplayPart1Panel.add(showGameNumberLabel); //fill the tables with stats
-		statsDisplayPart1Panel.add(showPlateAppearancesLabel);
-		statsDisplayPart1Panel.add(showAtBatsLabel);
-		statsDisplayPart1Panel.add(showRunsLabel);
-		statsDisplayPart1Panel.add(showTotalHitsLabel);
-		statsDisplayPart1Panel.add(showDoublesLabel);
-		statsDisplayPart1Panel.add(showTriplesLabel);
-		statsDisplayPart1Panel.add(showHRLabel);
-		statsDisplayPart1Panel.add(showRBIsLabel);
-		statsDisplayPart1Panel.add(showSBLabel);
-		statsDisplayPart1Panel.add(showBBsLabel);
-		statsDisplayPart1Panel.add(showTotalKsLabel);
-		statsDisplayPart1Panel.add(showLookingKsLabel);
-		statsDisplayPart1Panel.add(showSwingingKsLabel);
-		statsDisplayPart1Panel.add(showGameNumberStatsLabel);
-		statsDisplayPart1Panel.add(showPlateAppearancesStatsLabel);
-		statsDisplayPart1Panel.add(showAtBatsStatsLabel);
-		statsDisplayPart1Panel.add(showRunsStatsLabel);
-		statsDisplayPart1Panel.add(showTotalHitsStatsLabel);
-		statsDisplayPart1Panel.add(showDoublesStatsLabel);
-		statsDisplayPart1Panel.add(showTriplesStatsLabel);
-		statsDisplayPart1Panel.add(showHRStatsLabel);
-		statsDisplayPart1Panel.add(showRBIsStatsLabel);
-		statsDisplayPart1Panel.add(showSBStatsLabel);
-		statsDisplayPart1Panel.add(showBBsStatsLabel);
-		statsDisplayPart1Panel.add(showTotalKsStatsLabel);
-		statsDisplayPart1Panel.add(showLookingKsStatsLabel);
-		statsDisplayPart1Panel.add(showSwingingKsStatsLabel);
-		statsDisplayPart2Panel.add(showAVGLabel); //table 2
-		statsDisplayPart2Panel.add(showOBPLabel);
-		statsDisplayPart2Panel.add(showSLGLabel);
-		statsDisplayPart2Panel.add(showOPSLabel);
-		statsDisplayPart2Panel.add(showTBLabel);
-		statsDisplayPart2Panel.add(showHBPLabel);
-		statsDisplayPart2Panel.add(showSacBuntLabel);
-		statsDisplayPart2Panel.add(showSacFlyLabel);
-		statsDisplayPart2Panel.add(showBABIPLabel);
-		statsDisplayPart2Panel.add(showLDLabel);
-		statsDisplayPart2Panel.add(showFBLabel);
-		statsDisplayPart2Panel.add(showGBLabel);
-		statsDisplayPart2Panel.add(showBBPerLabel);
-		statsDisplayPart2Panel.add(showKPerLabel);
-		statsDisplayPart2Panel.add(showHRPerFBLabel);
-		statsDisplayPart2Panel.add(showAVGStatsLabel);
-		statsDisplayPart2Panel.add(showOBPStatsLabel);
-		statsDisplayPart2Panel.add(showSLGStatsLabel);
-		statsDisplayPart2Panel.add(showOPSStatsLabel);
-		statsDisplayPart2Panel.add(showTBStatsLabel);
-		statsDisplayPart2Panel.add(showHBPStatsLabel);
-		statsDisplayPart2Panel.add(showSacBuntStatsLabel);
-		statsDisplayPart2Panel.add(showSacFlyStatsLabel);
-		statsDisplayPart2Panel.add(showBABIPStatsLabel);
-		statsDisplayPart2Panel.add(showLDStatsLabel);
-		statsDisplayPart2Panel.add(showFBStatsLabel);
-		statsDisplayPart2Panel.add(showGBStatsLabel);
-		statsDisplayPart2Panel.add(showBBPerStatsLabel);
-		statsDisplayPart2Panel.add(showKPerStatsLabel);
-		statsDisplayPart2Panel.add(showHRPerFBStatsLabel);
-		showStatsPanel.add(statsDisplayPart1Panel);
-		showStatsPanel.add(statsDisplayPart2Panel);
+		gameCatPanel.add(showGameNumberLabel); //first, add labels to panels
+		gameStatPanel.add(showGameNumberStatsLabel);
+		plateApCatPanel.add(showPlateAppearancesLabel);
+		plateApStatPanel.add(showPlateAppearancesStatsLabel);
+		atBatCatPanel.add(showAtBatsLabel);
+		atBatStatPanel.add(showAtBatsStatsLabel);
+		runsCatPanel.add(showRunsLabel);
+		runsStatPanel.add(showRunsStatsLabel);
+		hitsCatPanel.add(showTotalHitsLabel);
+		hitsStatPanel.add(showTotalHitsStatsLabel);
+		doubleCatPanel.add(showDoublesLabel);
+		doubleStatPanel.add(showDoublesStatsLabel);
+		tripleCatPanel.add(showTriplesLabel);
+		tripleStatPanel.add(showTriplesStatsLabel);
+		hrCatPanel.add(showHRLabel);
+		hrStatPanel.add(showHRStatsLabel);
+		rbiCatPanel.add(showRBIsLabel);
+		rbiStatPanel.add(showRBIsStatsLabel);
+		sbCatPanel.add(showSBLabel);
+		sbStatPanel.add(showSBStatsLabel);
+		bbCatPanel.add(showBBsLabel);
+		bbStatPanel.add(showBBsStatsLabel);
+		kCatPanel.add(showTotalKsLabel);
+		kStatPanel.add(showTotalKsStatsLabel);
+		lookingKCatPanel.add(showLookingKsLabel);
+		lookingKStatPanel.add(showLookingKsStatsLabel);
+		swingingKCatPanel.add(showSwingingKsLabel);
+		swingingKStatPanel.add(showSwingingKsStatsLabel);
+		avgCatPanel.add(showAVGLabel);
+		avgStatPanel.add(showAVGStatsLabel);
+		obpCatPanel.add(showOBPLabel);
+		obpStatPanel.add(showOBPStatsLabel);
+		slgCatPanel.add(showSLGLabel);
+		slgStatPanel.add(showSLGStatsLabel);
+		opsCatPanel.add(showOPSLabel);
+		opsStatPanel.add(showOPSStatsLabel);
+		tbCatPanel.add(showTBLabel);
+		tbStatPanel.add(showTBStatsLabel);
+		hbpCatPanel.add(showHBPLabel);
+		hbpStatPanel.add(showHBPStatsLabel);
+		sacBCatPanel.add(showSacBuntLabel);
+		sacBStatPanel.add(showSacBuntStatsLabel);
+		sacFCatPanel.add(showSacFlyLabel);
+		sacFStatPanel.add(showSacFlyStatsLabel);
+		babipCatPanel.add(showBABIPLabel);
+		babipStatPanel.add(showBABIPStatsLabel);
+		ldCatPanel.add(showLDLabel);
+		ldStatPanel.add(showLDStatsLabel);
+		fbCatPanel.add(showFBLabel);
+		fbStatPanel.add(showFBStatsLabel);
+		gbCatPanel.add(showGBLabel);
+		gbStatPanel.add(showGBStatsLabel);
+		bbPerCatPanel.add(showBBPerLabel);
+		bbPerStatPanel.add(showBBPerStatsLabel);
+		kPerCatPanel.add(showKPerLabel);
+		kPerStatPanel.add(showKPerStatsLabel);
+		hrPerCatPanel.add(showHRPerFBLabel);
+		hrPerStatPanel.add(showHRPerFBStatsLabel);
+		statsDisplayPart1Panel.add(gameCatPanel); //add each panel to the table
+		statsDisplayPart1Panel.add(plateApCatPanel);
+		statsDisplayPart1Panel.add(atBatCatPanel);
+		statsDisplayPart1Panel.add(runsCatPanel);
+		statsDisplayPart1Panel.add(hitsCatPanel);
+		statsDisplayPart1Panel.add(doubleCatPanel);
+		statsDisplayPart1Panel.add(tripleCatPanel);
+		statsDisplayPart1Panel.add(hrCatPanel);
+		statsDisplayPart1Panel.add(rbiCatPanel);
+		statsDisplayPart1Panel.add(sbCatPanel);
+		statsDisplayPart1Panel.add(bbCatPanel);
+		statsDisplayPart1Panel.add(kCatPanel);
+		statsDisplayPart1Panel.add(lookingKCatPanel);
+		statsDisplayPart1Panel.add(swingingKCatPanel);
+		statsDisplayPart1Panel.add(gameStatPanel);
+		statsDisplayPart1Panel.add(plateApStatPanel);
+		statsDisplayPart1Panel.add(atBatStatPanel);
+		statsDisplayPart1Panel.add(runsStatPanel);
+		statsDisplayPart1Panel.add(hitsStatPanel);
+		statsDisplayPart1Panel.add(doubleStatPanel);
+		statsDisplayPart1Panel.add(tripleStatPanel);
+		statsDisplayPart1Panel.add(hrStatPanel);
+		statsDisplayPart1Panel.add(rbiStatPanel);
+		statsDisplayPart1Panel.add(sbStatPanel);
+		statsDisplayPart1Panel.add(bbStatPanel);
+		statsDisplayPart1Panel.add(kStatPanel);
+		statsDisplayPart1Panel.add(lookingKStatPanel);
+		statsDisplayPart1Panel.add(swingingKStatPanel);
+		statsDisplayPart2Panel.add(avgCatPanel); //table 2
+		statsDisplayPart2Panel.add(obpCatPanel);
+		statsDisplayPart2Panel.add(slgCatPanel);
+		statsDisplayPart2Panel.add(opsCatPanel);
+		statsDisplayPart2Panel.add(tbCatPanel);
+		statsDisplayPart2Panel.add(hbpCatPanel);
+		statsDisplayPart2Panel.add(sacBCatPanel);
+		statsDisplayPart2Panel.add(sacFCatPanel);
+		statsDisplayPart2Panel.add(babipCatPanel);
+		statsDisplayPart2Panel.add(ldCatPanel);
+		statsDisplayPart2Panel.add(fbCatPanel);
+		statsDisplayPart2Panel.add(gbCatPanel);
+		statsDisplayPart2Panel.add(bbPerCatPanel);
+		statsDisplayPart2Panel.add(kPerCatPanel);
+		statsDisplayPart2Panel.add(hrPerCatPanel);
+		statsDisplayPart2Panel.add(avgStatPanel);
+		statsDisplayPart2Panel.add(obpStatPanel);
+		statsDisplayPart2Panel.add(slgStatPanel);
+		statsDisplayPart2Panel.add(opsStatPanel);
+		statsDisplayPart2Panel.add(tbStatPanel);
+		statsDisplayPart2Panel.add(hbpStatPanel);
+		statsDisplayPart2Panel.add(sacBStatPanel);
+		statsDisplayPart2Panel.add(sacFStatPanel);
+		statsDisplayPart2Panel.add(babipStatPanel);
+		statsDisplayPart2Panel.add(ldStatPanel);
+		statsDisplayPart2Panel.add(fbStatPanel);
+		statsDisplayPart2Panel.add(gbStatPanel);
+		statsDisplayPart2Panel.add(bbPerStatPanel);
+		statsDisplayPart2Panel.add(kPerStatPanel);
+		statsDisplayPart2Panel.add(hrPerStatPanel);
+		
+		statsScrollPart1.setViewportView(statsDisplayPart1Panel);
+		statsScrollPart2.setViewportView(statsDisplayPart2Panel);
+		showStatsPanel.add(statsScrollPart1);
+		showStatsPanel.add(statsScrollPart2);
 		homeButtonPanel.add(homeButton); //home button
 
 		//set unneeded buttons/panels to false visibility
@@ -1164,10 +1387,41 @@ public class SabretrackerGUI extends JPanel
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			newSeasonAddGameButton.setVisible(false);
-			ts.addGameOne();
-			
+			newSeasonAddGameButton.setVisible(false);		
+			addStatsSubmitButton.setVisible(false); //remove normal submit button
+			newSeasonSubmitStatsButton.setVisible(true); //use special new season button
 			addGameStatsPanel.setVisible(true);
+		}
+	}
+	
+	class newSeasonSubmitStatsButton implements ActionListener
+	{
+		public void actionPerformed(ActionEvent e)
+		{
+			ts.addGameOne();
+			//get info from textfields
+			String date = dateEntry.getText();
+			int plateAps = Integer.parseInt(plateAppearancesEntry.getText());
+			int walks = Integer.parseInt(walksEntry.getText());
+			int hbp = Integer.parseInt(HBPsEntry.getText());
+			int hits = Integer.parseInt(totalHitsEntry.getText());
+			int outs = Integer.parseInt(outFCOrErrorEntry.getText());
+			int oneB = Integer.parseInt(singlesEntry.getText());
+			int twoB = Integer.parseInt(doublesEntry.getText());
+			int threeB = Integer.parseInt(triplesEntry.getText());
+			int hr = Integer.parseInt(homeRunsEntry.getText());
+			int soS = Integer.parseInt(strikeoutSwingingEntry.getText());
+			int soL = Integer.parseInt(strikeoutLookingEntry.getText());
+			int sacF = Integer.parseInt(sacFlyEntry.getText());
+			int sacB = Integer.parseInt(sacBuntEntry.getText());
+			int ld = Integer.parseInt(lineDriveEntry.getText());
+			int fb = Integer.parseInt(flyBallEntry.getText());
+			int RBI = Integer.parseInt(RBIsEntry.getText());
+			int runs = Integer.parseInt(runsScoredEntry.getText());
+			int sb = Integer.parseInt(stolenBasesEntry.getText());
+			
+			ts.enterGameStats(date, plateAps, walks, hbp, hits, outs, oneB, twoB, threeB, 
+					hr, soS, soL, sacF, sacB, ld, fb, RBI, runs, sb);
 		}
 	}
 	
@@ -1176,7 +1430,8 @@ public class SabretrackerGUI extends JPanel
 		public void actionPerformed(ActionEvent e)
 		{
 			addEditShowStatsPanel.setVisible(false);
-			ts.findGameNumber();
+			addStatsSubmitButton.setVisible(true); //use normal submit button
+			newSeasonSubmitStatsButton.setVisible(false); //remove special new season button
 			addGameStatsPanel.setVisible(true);
 		}
 	}
@@ -1192,6 +1447,7 @@ public class SabretrackerGUI extends JPanel
 			selectGameToEditComboLabel.setAlignmentX(CENTER_ALIGNMENT);
 			selectGameToEditComboPanel.add(gameToEdit);
 			selectGameToEditComboPanel.add(gameToEditSubmitButton);
+			selectGameToEditComboPanel.add(Box.createVerticalStrut(100));
 			selectGameToEditPanel.add(selectGameToEditComboLabel);
 			selectGameToEditPanel.add(selectGameToEditComboPanel);
 			selectGameToEditPanel.setVisible(true);
@@ -1285,7 +1541,7 @@ public class SabretrackerGUI extends JPanel
 			showAtBatsStatsLabel.setText(Integer.toString(statsToDisplay.getStatABs()));
 			showRunsStatsLabel.setText(Integer.toString(statsToDisplay.getStatRuns()));
 			showTotalHitsStatsLabel.setText(Integer.toString(statsToDisplay.getStatHits()));
-			showDoublesStatsLabel.setText(Integer.toBinaryString(statsToDisplay.getStat2B()));
+			showDoublesStatsLabel.setText(Integer.toString(statsToDisplay.getStat2B()));
 			showTriplesStatsLabel.setText(Integer.toString(statsToDisplay.getStat3B()));
 			showHRStatsLabel.setText(Integer.toString(statsToDisplay.getStatHR()));
 			showRBIsStatsLabel.setText(Integer.toString(statsToDisplay.getStatRBI()));
@@ -1317,6 +1573,7 @@ public class SabretrackerGUI extends JPanel
 	{
 		public void actionPerformed(ActionEvent e)
 		{
+			ts.findGameNumber();
 			//get the input from JTextField
 			String date = dateEntry.getText();
 			int plateAps = Integer.parseInt(plateAppearancesEntry.getText());
@@ -1350,6 +1607,8 @@ public class SabretrackerGUI extends JPanel
 	{
 		public void actionPerformed (ActionEvent e)
 		{
+			//will bring back to season choice page
+			//set everything back to defaults
 			titleQuestionPanel.setVisible(true);
 			seasonChoicePanel.setVisible(true);
 			homeButton.setVisible(false);
@@ -1362,8 +1621,27 @@ public class SabretrackerGUI extends JPanel
 			addGameStatsPanel.setVisible(false);
 			addEditShowStatsPanel.setVisible(false);
 			selectGameToEditPanel.setVisible(false);
+			showStatsPanel.setVisible(false);
 			
-			//need to set all textfields to empty
+			dateEntry.setText("X/XX/XXXX"); //clear text fields
+			plateAppearancesEntry.setText("");
+			walksEntry.setText("");
+			HBPsEntry.setText("");
+			totalHitsEntry.setText("");
+			outFCOrErrorEntry.setText("");
+			singlesEntry.setText("");
+			doublesEntry.setText("");
+			triplesEntry.setText("");
+			homeRunsEntry.setText("");
+			strikeoutSwingingEntry.setText("");
+			strikeoutLookingEntry.setText("");
+			sacFlyEntry.setText("");
+			sacBuntEntry.setText("");
+			lineDriveEntry.setText("");
+			flyBallEntry.setText("");
+			RBIsEntry.setText("");
+			runsScoredEntry.setText("");
+			stolenBasesEntry.setText("");
 			
 			loadSeasonComboBoxPanel.removeAll();
 			loadSeasonPanel.removeAll();

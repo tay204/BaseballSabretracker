@@ -1,36 +1,3 @@
-Honey Badger Don't Care
-Spring
-2014
-Yankees
-Fall
-2014
-Twins
-Fall
-2010
-Bronx Bombers
-Spring
-2014
-Bears
-Spring
-2014
-Lol
-Winter
-2014
-Twins
-Fall
-2014
-Honey Badger Don't Care
-Spring
-2014
-Dukes
-Summer
-2015
-Game Stats Test
-Spring
-2014
-Game Stats Test2
-Summer
-2014
 Compute Stats Test
 Summer
 2014
@@ -39,4 +6,10 @@ Fall
 2014
 Final Stats Test
 Summer
+2014
+Monkeys
+Fall
+2014
+HUD
+Spring
 2014
